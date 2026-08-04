@@ -1,0 +1,51 @@
+name: Publish design review
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - index.html
+      - reviews/**
+      - assets/**
+      - .github/workflows/pages.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Verify review surface
+        run: |
+          test -f index.html
+          grep -q "Gameplay Layout Review" index.html
+          grep -q 'data-layout-button="board-first"' index.html
+          grep -q 'data-layout-button="balanced"' index.html
+          grep -q 'data-layout-button="story-rich"' index.html
+
+      - name: Upload review surface
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: .
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
