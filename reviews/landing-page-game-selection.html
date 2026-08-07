@@ -1,0 +1,1257 @@
+<!doctype html>
+<html lang="en" data-visualize-standalone>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="description" content="Compare three exploratory landing-page directions for Grandma's Board Games.">
+  <title>Grandma's Board Games · Landing Page Review</title>
+  <style>
+    :root {
+      color-scheme: light;
+      background: #f2e7ce;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      min-width: 320px;
+      background:
+        radial-gradient(circle at 8% 2%, rgb(235 175 69 / 16%), transparent 25rem),
+        #f2e7ce;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      padding: clamp(20px, 5vw, 56px) clamp(12px, 4vw, 36px) 64px;
+      background:
+        linear-gradient(90deg, rgb(103 65 37 / 4%) 1px, transparent 1px) 0 0 / 38px 38px,
+        linear-gradient(rgb(103 65 37 / 4%) 1px, transparent 1px) 0 0 / 38px 38px;
+    }
+
+    main {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+<main>
+<div id="landing-page-review">
+  <style>
+    #landing-page-review {
+      --ink: #36261d;
+      --muted-ink: #725f52;
+      --paper: #fffaf0;
+      --paper-strong: #fffef9;
+      --terracotta: #b9502c;
+      --terracotta-dark: #86351e;
+      --marigold: #efad38;
+      --leaf: #3f6b4f;
+      --leaf-soft: #dbe8d6;
+      --line: rgb(93 61 43 / 18%);
+      color: var(--ink);
+      font-family: Inter, ui-rounded, "Avenir Next", system-ui, sans-serif;
+    }
+
+    #landing-page-review * {
+      box-sizing: border-box;
+    }
+
+    #landing-page-review button {
+      font: inherit;
+    }
+
+    #landing-page-review [hidden] {
+      display: none !important;
+    }
+
+    #landing-page-review .review-shell {
+      width: min(100%, 1120px);
+      margin-inline: auto;
+    }
+
+    #landing-page-review .review-header {
+      display: grid;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+
+    #landing-page-review .eyebrow {
+      margin: 0;
+      color: var(--terracotta-dark);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    #landing-page-review h1,
+    #landing-page-review h2,
+    #landing-page-review h3,
+    #landing-page-review p {
+      margin: 0;
+    }
+
+    #landing-page-review h1 {
+      max-width: 780px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2rem, 8vw, 4.6rem);
+      font-weight: 500;
+      letter-spacing: -0.045em;
+      line-height: 0.98;
+    }
+
+    #landing-page-review .review-intro {
+      max-width: 680px;
+      color: var(--muted-ink);
+      font-size: clamp(0.96rem, 2.4vw, 1.1rem);
+      line-height: 1.65;
+    }
+
+    #landing-page-review .review-state {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 11px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgb(255 255 255 / 70%);
+      color: var(--muted-ink);
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    #landing-page-review .review-state::before {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--marigold);
+      content: "";
+    }
+
+    #landing-page-review .concept-tabs {
+      display: grid;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    #landing-page-review .concept-tab {
+      position: relative;
+      display: grid;
+      min-height: 94px;
+      grid-template-columns: 34px minmax(0, 1fr) auto;
+      gap: 8px 12px;
+      align-items: start;
+      padding: 15px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      color: var(--ink);
+      background: rgb(255 254 249 / 74%);
+      box-shadow: 0 8px 24px rgb(96 55 24 / 5%);
+      cursor: pointer;
+      text-align: left;
+      transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+    }
+
+    #landing-page-review .concept-tab:hover {
+      transform: translateY(-2px);
+      border-color: rgb(185 80 44 / 48%);
+    }
+
+    #landing-page-review .concept-tab[aria-selected="true"] {
+      border-color: var(--terracotta);
+      background: var(--paper-strong);
+      box-shadow: 0 12px 34px rgb(121 55 26 / 13%);
+    }
+
+    #landing-page-review .concept-tab:focus-visible,
+    #landing-page-review .game-card:focus-visible,
+    #landing-page-review .match-button:focus-visible,
+    #landing-page-review .back-button:focus-visible {
+      outline: 3px solid #236aa1;
+      outline-offset: 3px;
+    }
+
+    #landing-page-review .concept-letter {
+      display: grid;
+      width: 32px;
+      height: 32px;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--paper-strong);
+      background: var(--terracotta);
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 700;
+    }
+
+    #landing-page-review .concept-copy {
+      display: grid;
+      gap: 3px;
+    }
+
+    #landing-page-review .concept-copy strong {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.06rem;
+      line-height: 1.2;
+    }
+
+    #landing-page-review .concept-copy small {
+      color: var(--muted-ink);
+      font-size: 0.77rem;
+      line-height: 1.35;
+    }
+
+    #landing-page-review .concept-status {
+      padding: 4px 8px;
+      border-radius: 999px;
+      color: var(--leaf);
+      background: var(--leaf-soft);
+      font-size: 0.66rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    #landing-page-review .recommended {
+      grid-column: 2 / -1;
+      width: fit-content;
+      color: var(--terracotta-dark);
+      font-size: 0.67rem;
+      font-weight: 850;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    #landing-page-review .comparison {
+      display: grid;
+      gap: 18px;
+    }
+
+    #landing-page-review .phone-stage {
+      position: relative;
+      display: grid;
+      min-height: 710px;
+      place-items: center;
+      padding: 28px 12px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background:
+        radial-gradient(circle at 72% 15%, rgb(255 232 171 / 92%), transparent 26%),
+        linear-gradient(150deg, #ead3a4 0%, #c67b4c 52%, #7f4b35 100%);
+    }
+
+    #landing-page-review .phone-stage::before,
+    #landing-page-review .phone-stage::after {
+      position: absolute;
+      border-radius: 50%;
+      background: rgb(56 78 45 / 48%);
+      filter: blur(1px);
+      content: "";
+    }
+
+    #landing-page-review .phone-stage::before {
+      top: -80px;
+      left: -90px;
+      width: 250px;
+      height: 250px;
+    }
+
+    #landing-page-review .phone-stage::after {
+      right: -72px;
+      bottom: -75px;
+      width: 220px;
+      height: 220px;
+    }
+
+    #landing-page-review .phone {
+      position: relative;
+      z-index: 1;
+      width: min(100%, 348px);
+      overflow: hidden;
+      border: 8px solid #30241e;
+      border-radius: 36px;
+      background: #f2c77f;
+      box-shadow: 0 30px 70px rgb(50 24 14 / 34%);
+      transition: transform 220ms ease;
+    }
+
+    #landing-page-review .phone::before {
+      position: absolute;
+      z-index: 8;
+      top: 8px;
+      left: 50%;
+      width: 72px;
+      height: 18px;
+      border-radius: 999px;
+      background: #30241e;
+      content: "";
+      transform: translateX(-50%);
+    }
+
+    #landing-page-review .screen {
+      position: relative;
+      display: grid;
+      min-height: 630px;
+      grid-template-rows: auto auto 1fr auto;
+      overflow: hidden;
+      border-radius: 27px;
+      background:
+        linear-gradient(rgb(95 49 32 / 12%) 1px, transparent 1px) 0 72% / 100% 22px,
+        linear-gradient(160deg, #ffd98d 0%, #efa35f 53%, #9e5a3e 100%);
+    }
+
+    #landing-page-review .screen::before {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, transparent 48%, rgb(255 244 203 / 25%) 50%, transparent 52%),
+        radial-gradient(circle at 72% 27%, rgb(255 237 171 / 82%), transparent 23%);
+      content: "";
+      pointer-events: none;
+    }
+
+    #landing-page-review .app-bar {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      min-height: 54px;
+      align-items: end;
+      justify-content: space-between;
+      padding: 20px 18px 8px;
+      color: #59331f;
+    }
+
+    #landing-page-review .brand {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 0.96rem;
+      font-weight: 700;
+    }
+
+    #landing-page-review .time-chip {
+      padding: 4px 7px;
+      border: 1px solid rgb(82 49 30 / 20%);
+      border-radius: 999px;
+      background: rgb(255 247 218 / 52%);
+      font-size: 0.6rem;
+      font-weight: 750;
+    }
+
+    #landing-page-review .arrival {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      gap: 4px;
+      padding: 8px 22px 12px;
+    }
+
+    #landing-page-review .arrival-mode {
+      color: #71452d;
+      font-size: 0.58rem;
+      font-weight: 850;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    #landing-page-review .arrival h2 {
+      max-width: 260px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.76rem;
+      font-weight: 500;
+      letter-spacing: -0.04em;
+      line-height: 1.02;
+    }
+
+    #landing-page-review .arrival p {
+      color: #6d4937;
+      font-size: 0.68rem;
+      line-height: 1.45;
+    }
+
+    #landing-page-review .courtyard {
+      position: relative;
+      z-index: 2;
+      min-height: 390px;
+      overflow: hidden;
+    }
+
+    #landing-page-review .arch {
+      position: absolute;
+      inset: 22px 18px 16px;
+      border: 3px solid rgb(109 53 31 / 35%);
+      border-bottom: 0;
+      border-radius: 130px 130px 10px 10px;
+      box-shadow: inset 0 0 0 7px rgb(255 226 156 / 17%);
+    }
+
+    #landing-page-review .plant {
+      position: absolute;
+      bottom: 56px;
+      left: 14px;
+      width: 46px;
+      height: 72px;
+      border-radius: 60% 10% 50% 25%;
+      background: #496b44;
+      box-shadow: 18px -22px 0 -7px #5e7e51, -8px -34px 0 -10px #42613d;
+      transform: rotate(-6deg);
+    }
+
+    #landing-page-review .grandma {
+      position: absolute;
+      z-index: 3;
+      right: 18px;
+      bottom: 46px;
+      display: grid;
+      width: 86px;
+      height: 116px;
+      place-items: start center;
+    }
+
+    #landing-page-review .grandma-head {
+      width: 42px;
+      height: 42px;
+      border: 3px solid #5f3627;
+      border-radius: 50%;
+      background: #c9855c;
+      box-shadow: inset 0 9px 0 #ece2d0;
+    }
+
+    #landing-page-review .grandma-body {
+      width: 76px;
+      height: 76px;
+      margin-top: -8px;
+      border-radius: 45px 45px 14px 14px;
+      background: linear-gradient(90deg, #865a7c 0 16%, #e7b85a 16% 27%, #7d4e74 27%);
+      box-shadow: 0 8px 14px rgb(56 26 17 / 18%);
+    }
+
+    #landing-page-review .grandma-label {
+      position: absolute;
+      top: -19px;
+      white-space: nowrap;
+      color: #68412d;
+      font-size: 0.56rem;
+      font-weight: 800;
+    }
+
+    #landing-page-review .game-rail {
+      position: absolute;
+      z-index: 4;
+      right: 0;
+      bottom: 24px;
+      left: 0;
+      display: flex;
+      gap: 9px;
+      padding: 6px 20px 16px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+      transition: transform 240ms ease;
+    }
+
+    #landing-page-review .game-rail::-webkit-scrollbar {
+      display: none;
+    }
+
+    #landing-page-review .game-card {
+      position: relative;
+      display: grid;
+      width: 132px;
+      min-width: 132px;
+      min-height: 166px;
+      grid-template-rows: 1fr auto;
+      padding: 8px;
+      overflow: hidden;
+      border: 2px solid rgb(87 51 35 / 26%);
+      border-radius: 17px;
+      color: #43281e;
+      background: #fff6d8;
+      box-shadow: 0 12px 24px rgb(68 29 16 / 22%);
+      cursor: pointer;
+      scroll-snap-align: center;
+      text-align: left;
+      transition: transform 180ms ease, border-color 180ms ease;
+    }
+
+    #landing-page-review .game-card:hover,
+    #landing-page-review .game-card[aria-pressed="true"] {
+      border-color: #81391f;
+      transform: translateY(-5px) rotate(-1deg);
+    }
+
+    #landing-page-review .game-art {
+      position: relative;
+      min-height: 105px;
+      overflow: hidden;
+      border-radius: 11px;
+    }
+
+    #landing-page-review .game-art::before,
+    #landing-page-review .game-art::after {
+      position: absolute;
+      content: "";
+    }
+
+    #landing-page-review .game-card[data-game="Chowka"] .game-art {
+      background:
+        linear-gradient(90deg, transparent 34%, #e8b95f 34% 66%, transparent 66%),
+        linear-gradient(transparent 34%, #e8b95f 34% 66%, transparent 66%),
+        #a94e31;
+    }
+
+    #landing-page-review .game-card[data-game="Chowka"] .game-art::before {
+      inset: 13px;
+      border: 2px solid rgb(255 241 184 / 80%);
+      background:
+        linear-gradient(90deg, transparent 47%, rgb(255 241 184 / 58%) 48% 52%, transparent 53%),
+        linear-gradient(transparent 47%, rgb(255 241 184 / 58%) 48% 52%, transparent 53%);
+    }
+
+    #landing-page-review .game-card[data-game="Chowka"] .game-art::after {
+      top: 50%;
+      left: 50%;
+      width: 13px;
+      height: 13px;
+      border: 2px solid #fff0ba;
+      border-radius: 50% 45% 55% 42%;
+      background: #74331f;
+      box-shadow: 0 0 0 2px rgb(98 40 24 / 22%);
+      translate: -50% -50%;
+      animation: chowka-step 2.4s steps(3, end) 300ms 2 both;
+    }
+
+    #landing-page-review .game-card[data-game="Pachisi"] .game-art {
+      background: conic-gradient(from 45deg, #c96745 0 25%, #d8b651 0 50%, #547459 0 75%, #596f9d 0);
+    }
+
+    #landing-page-review .game-card[data-game="Pachisi"] .game-art::before {
+      inset: 16px;
+      background: rgb(255 239 189 / 88%);
+      clip-path: polygon(33% 0, 67% 0, 67% 33%, 100% 33%, 100% 67%, 67% 67%, 67% 100%, 33% 100%, 33% 67%, 0 67%, 0 33%, 33% 33%);
+    }
+
+    #landing-page-review .game-card[data-game="Pachisi"] .game-art::after {
+      top: 50%;
+      left: 50%;
+      width: 12px;
+      height: 12px;
+      border: 2px solid #fff2c4;
+      border-radius: 50%;
+      background: #8d2e23;
+      translate: -50% -50%;
+      animation: pachisi-route 2.8s ease-in-out 250ms 2 both;
+    }
+
+    #landing-page-review .game-card[data-game="Navakankari"] .game-art {
+      background:
+        linear-gradient(90deg, transparent 48%, rgb(239 224 185 / 68%) 48% 52%, transparent 52%),
+        linear-gradient(transparent 48%, rgb(239 224 185 / 68%) 48% 52%, transparent 52%),
+        #596484;
+    }
+
+    #landing-page-review .game-card[data-game="Navakankari"] .game-art::before {
+      inset: 16px;
+      border: 2px solid #eee0b9;
+      box-shadow:
+        inset 0 0 0 11px #596484,
+        inset 0 0 0 13px #eee0b9,
+        inset 0 0 0 24px #596484,
+        inset 0 0 0 26px #eee0b9;
+    }
+
+    #landing-page-review .game-card[data-game="Navakankari"] .game-art::after {
+      top: 50%;
+      left: 50%;
+      width: 13px;
+      height: 13px;
+      border: 2px solid #f5e8c6;
+      border-radius: 50%;
+      background: #343b56;
+      translate: -50% -50%;
+      animation: navakankari-slide 2.2s ease-in-out 400ms 2 both;
+    }
+
+    #landing-page-review .game-name {
+      display: grid;
+      gap: 1px;
+      padding: 7px 3px 2px;
+    }
+
+    #landing-page-review .game-name strong {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 0.86rem;
+    }
+
+    #landing-page-review .game-name small {
+      color: #806455;
+      font-size: 0.56rem;
+    }
+
+    #landing-page-review .match-dock {
+      position: relative;
+      z-index: 5;
+      display: grid;
+      gap: 7px;
+      padding: 13px 16px 16px;
+      border-top: 1px solid rgb(93 48 31 / 16%);
+      background: rgb(255 247 218 / 92%);
+      backdrop-filter: blur(10px);
+    }
+
+    #landing-page-review .direct-path {
+      color: #75503c;
+      font-size: 0.59rem;
+      font-weight: 700;
+    }
+
+    #landing-page-review .match-button {
+      min-height: 42px;
+      border: 0;
+      border-radius: 13px;
+      color: #fff9e8;
+      background: #7f351f;
+      box-shadow: 0 7px 14px rgb(98 43 25 / 20%);
+      cursor: pointer;
+      font-size: 0.75rem;
+      font-weight: 800;
+    }
+
+    #landing-page-review .match-button:active {
+      transform: translateY(1px);
+    }
+
+    #landing-page-review .match-setup-screen {
+      position: relative;
+      min-height: 630px;
+      padding: 54px 20px 22px;
+      overflow: hidden;
+      border-radius: 27px;
+      background:
+        radial-gradient(circle at 82% 11%, rgb(255 228 156 / 72%), transparent 24%),
+        linear-gradient(160deg, #f7d38f 0%, #e89c5c 58%, #9b563b 100%);
+    }
+
+    #landing-page-review .setup-topbar {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    #landing-page-review .back-button {
+      display: grid;
+      width: 38px;
+      height: 38px;
+      flex: 0 0 auto;
+      place-items: center;
+      border: 1px solid rgb(82 46 28 / 24%);
+      border-radius: 50%;
+      color: #5e321f;
+      background: rgb(255 248 218 / 72%);
+      cursor: pointer;
+      font-size: 1.1rem;
+    }
+
+    #landing-page-review .setup-kicker {
+      color: #71452d;
+      font-size: 0.59rem;
+      font-weight: 850;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    #landing-page-review .setup-content {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      gap: 18px;
+      padding-top: 28px;
+    }
+
+    #landing-page-review .setup-content h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 2.1rem;
+      font-weight: 500;
+      letter-spacing: -0.04em;
+      line-height: 1;
+    }
+
+    #landing-page-review .setup-intro {
+      color: #694432;
+      font-size: 0.75rem;
+      line-height: 1.5;
+    }
+
+    #landing-page-review .setup-game {
+      display: grid;
+      grid-template-columns: 68px 1fr;
+      gap: 12px;
+      align-items: center;
+      padding: 12px;
+      border: 1px solid rgb(84 47 29 / 20%);
+      border-radius: 17px;
+      background: rgb(255 247 216 / 78%);
+    }
+
+    #landing-page-review .setup-game-art {
+      width: 68px;
+      height: 68px;
+      border-radius: 12px;
+      background:
+        radial-gradient(circle, #fff1b7 0 3px, transparent 4px) 0 0 / 18px 18px,
+        #bb6139;
+    }
+
+    #landing-page-review .setup-game-copy {
+      display: grid;
+      gap: 2px;
+    }
+
+    #landing-page-review .setup-game-copy small,
+    #landing-page-review .setup-row span {
+      color: #775440;
+      font-size: 0.63rem;
+    }
+
+    #landing-page-review .setup-game-copy strong {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.16rem;
+    }
+
+    #landing-page-review .setup-list {
+      display: grid;
+      gap: 8px;
+    }
+
+    #landing-page-review .setup-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 13px;
+      border-radius: 13px;
+      background: rgb(255 247 216 / 55%);
+    }
+
+    #landing-page-review .setup-row strong {
+      font-size: 0.72rem;
+    }
+
+    #landing-page-review .setup-boundary {
+      margin-top: auto;
+      padding: 13px;
+      border: 1px dashed rgb(91 49 29 / 34%);
+      border-radius: 13px;
+      color: #694432;
+      background: rgb(255 244 207 / 40%);
+      font-size: 0.65rem;
+      line-height: 1.45;
+    }
+
+    #landing-page-review .screen[data-concept-view="rail"] .game-rail {
+      bottom: 20px;
+      padding-left: 14px;
+    }
+
+    #landing-page-review .screen[data-concept-view="rail"] .game-card {
+      width: 146px;
+      min-width: 146px;
+    }
+
+    #landing-page-review .screen[data-concept-view="rail"] .arrival {
+      padding-bottom: 2px;
+    }
+
+    #landing-page-review .screen[data-concept-view="discovery"] .grandma {
+      right: 8px;
+      bottom: 154px;
+      transform: scale(0.82);
+      transform-origin: bottom right;
+    }
+
+    #landing-page-review .screen[data-concept-view="discovery"] .game-rail {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      bottom: 3px;
+      gap: 8px;
+      padding: 8px 18px 12px;
+      overflow: visible;
+    }
+
+    #landing-page-review .screen[data-concept-view="discovery"] .game-card {
+      width: auto;
+      min-width: 0;
+      min-height: 126px;
+    }
+
+    #landing-page-review .screen[data-concept-view="discovery"] .game-card:not([data-concepts~="discovery"]) {
+      display: none;
+    }
+
+    #landing-page-review .screen[data-concept-view="discovery"] .game-art {
+      min-height: 70px;
+    }
+
+    #landing-page-review .screen[data-concept-view="discovery"] .game-art::before {
+      inset: 10px;
+    }
+
+    #landing-page-review .screen[data-concept-view="hybrid"] .game-rail {
+      padding-inline: 28px;
+    }
+
+    #landing-page-review .screen[data-concept-view="hybrid"] .game-card:first-child {
+      min-width: 152px;
+    }
+
+    #landing-page-review .analysis-card {
+      display: grid;
+      align-content: start;
+      gap: 18px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: rgb(255 254 249 / 78%);
+      box-shadow: 0 16px 46px rgb(96 55 24 / 7%);
+    }
+
+    #landing-page-review .analysis-heading {
+      display: grid;
+      gap: 5px;
+    }
+
+    #landing-page-review .analysis-heading h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.45rem, 5vw, 2rem);
+      font-weight: 500;
+      letter-spacing: -0.03em;
+    }
+
+    #landing-page-review .analysis-heading p {
+      color: var(--muted-ink);
+      font-size: 0.86rem;
+      line-height: 1.55;
+    }
+
+    #landing-page-review .tradeoffs {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+    }
+
+    #landing-page-review .tradeoff {
+      display: grid;
+      grid-template-columns: 84px 1fr;
+      gap: 12px;
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+    }
+
+    #landing-page-review .tradeoff dt {
+      color: var(--terracotta-dark);
+      font-size: 0.68rem;
+      font-weight: 850;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    #landing-page-review .tradeoff dd {
+      margin: 0;
+      color: var(--muted-ink);
+      font-size: 0.82rem;
+      line-height: 1.5;
+    }
+
+    #landing-page-review .shared-decisions {
+      display: grid;
+      gap: 10px;
+      padding: 15px;
+      border-radius: 16px;
+      background: #f4ead6;
+    }
+
+    #landing-page-review .shared-decisions h3 {
+      font-size: 0.69rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    #landing-page-review .shared-decisions ul {
+      display: grid;
+      gap: 6px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    #landing-page-review .shared-decisions li {
+      display: grid;
+      grid-template-columns: 16px 1fr;
+      color: var(--muted-ink);
+      font-size: 0.76rem;
+      line-height: 1.4;
+    }
+
+    #landing-page-review .shared-decisions li::before {
+      color: var(--leaf);
+      content: "✓";
+      font-weight: 900;
+    }
+
+    #landing-page-review .checkpoint-note {
+      margin-top: 18px;
+      padding: 14px 16px;
+      border-left: 3px solid var(--marigold);
+      color: var(--muted-ink);
+      background: rgb(255 248 228 / 72%);
+      font-size: 0.76rem;
+      line-height: 1.55;
+    }
+
+    #landing-page-review .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    @keyframes chowka-step {
+      0%, 18% { transform: translate(-26px, 26px) rotate(-12deg); }
+      34%, 52% { transform: translate(0, 26px) rotate(8deg); }
+      68%, 84% { transform: translate(0, 0) rotate(-5deg); }
+      100% { transform: translate(26px, 0) rotate(7deg); }
+    }
+
+    @keyframes pachisi-route {
+      0%, 16% { transform: translate(-28px, 28px); }
+      38%, 52% { transform: translate(-28px, 0); }
+      72%, 84% { transform: translate(0, 0); }
+      100% { transform: translate(0, -28px); }
+    }
+
+    @keyframes navakankari-slide {
+      0%, 24% { transform: translateX(-30px); }
+      58%, 72% { transform: translateX(0); }
+      100% { transform: translateX(30px); }
+    }
+
+    @media (min-width: 740px) {
+      #landing-page-review .concept-tabs {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      #landing-page-review .comparison {
+        grid-template-columns: minmax(360px, 1.1fr) minmax(280px, 0.9fr);
+        align-items: stretch;
+      }
+
+      #landing-page-review .analysis-card {
+        padding: 28px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #landing-page-review *,
+      #landing-page-review *::before,
+      #landing-page-review *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+
+  <div class="review-shell">
+    <header class="review-header">
+      <p class="eyebrow">Grandma's Board Games · Landing page checkpoint</p>
+      <h1>Which welcome makes the courtyard feel like home?</h1>
+      <p class="review-intro">Compare three directions for moving from an adaptive arrival into game choice. Each keeps the same golden-hour courtyard, quiet Grandma host, animated game previews, and direct path to Match setup.</p>
+      <span class="review-state">Exploratory review · No option approved</span>
+    </header>
+
+    <div class="concept-tabs" role="tablist" aria-label="Landing page concepts">
+      <button class="concept-tab" type="button" role="tab" data-concept="hybrid" id="concept-hybrid" aria-controls="concept-preview" aria-selected="true" tabindex="0">
+        <span class="concept-letter" aria-hidden="true">C</span>
+        <span class="concept-copy"><strong>Focused courtyard hybrid</strong><small>A calm welcome with one confident game choice and a glimpse of more.</small></span>
+        <span class="concept-status">Exploring</span>
+        <span class="recommended">Recommended starting point</span>
+      </button>
+      <button class="concept-tab" type="button" role="tab" data-concept="rail" id="concept-rail" aria-controls="concept-preview" aria-selected="false" tabindex="-1">
+        <span class="concept-letter" aria-hidden="true">A</span>
+        <span class="concept-copy"><strong>Living scene rail</strong><small>Grandma's courtyard stays visible while a generous game rail invites browsing.</small></span>
+        <span class="concept-status">Exploring</span>
+      </button>
+      <button class="concept-tab" type="button" role="tab" data-concept="discovery" id="concept-discovery" aria-controls="concept-preview" aria-selected="false" tabindex="-1">
+        <span class="concept-letter" aria-hidden="true">B</span>
+        <span class="concept-copy"><strong>Courtyard discovery</strong><small>Game choice becomes the foreground, with the courtyard acting as its frame.</small></span>
+        <span class="concept-status">Exploring</span>
+      </button>
+    </div>
+
+    <section class="comparison" id="concept-preview" role="tabpanel" aria-labelledby="concept-hybrid" tabindex="0">
+      <div class="phone-stage" aria-label="Interactive mobile landing page mockup">
+        <div class="phone">
+          <div class="screen" id="landing-view" data-concept-view="hybrid">
+            <div class="app-bar"><span class="brand">Paati's Courtyard</span><span class="time-chip">Golden hour</span></div>
+            <div class="arrival">
+              <span class="arrival-mode" id="arrival-mode">Adaptive arrival · familiar return</span>
+              <h2 id="arrival-title">Welcome back, kanna.</h2>
+              <p id="arrival-copy">Chowka is ready where you left it—or choose a different game.</p>
+            </div>
+            <div class="courtyard">
+              <div class="arch" aria-hidden="true"></div>
+              <div class="plant" aria-hidden="true"></div>
+              <div class="grandma" role="img" aria-label="Grandma waits quietly on the veranda">
+                <span class="grandma-label">Quiet Grandma host</span>
+                <span class="grandma-head" aria-hidden="true"></span>
+                <span class="grandma-body" aria-hidden="true"></span>
+              </div>
+              <div class="game-rail" aria-label="Animated game previews">
+                <button class="game-card" type="button" data-game="Chowka" data-concepts="hybrid rail discovery" aria-pressed="true">
+                  <span class="game-art" aria-hidden="true"></span>
+                  <span class="game-name"><strong>Chowka</strong><small>2–4 players · Resume or start</small></span>
+                </button>
+                <button class="game-card" type="button" data-game="Pachisi" data-concepts="hybrid rail discovery" aria-pressed="false">
+                  <span class="game-art" aria-hidden="true"></span>
+                  <span class="game-name"><strong>Pachisi</strong><small>2–4 players · 25 min</small></span>
+                </button>
+                <button class="game-card" type="button" data-game="Navakankari" data-concepts="hybrid rail" aria-pressed="false">
+                  <span class="game-art" aria-hidden="true"></span>
+                  <span class="game-name"><strong>Navakankari</strong><small>2 players · Strategic</small></span>
+                </button>
+              </div>
+            </div>
+            <div class="match-dock">
+              <p class="direct-path" id="direct-path">Chowka selected → Match setup</p>
+              <button class="match-button" type="button" id="match-button">Continue to Match setup</button>
+            </div>
+          </div>
+          <section class="match-setup-screen" id="match-setup-view" hidden aria-labelledby="match-setup-heading">
+            <div class="setup-topbar">
+              <button class="back-button" type="button" id="back-to-courtyard" aria-label="Back to courtyard comparison">←</button>
+              <span class="setup-kicker">Match setup</span>
+            </div>
+            <div class="setup-content">
+              <h2 id="match-setup-heading" tabindex="-1">Set the table</h2>
+              <p class="setup-intro">Your game is chosen. This is the hand-off for deciding who joins before play begins.</p>
+              <div class="setup-game">
+                <span class="setup-game-art" aria-hidden="true"></span>
+                <span class="setup-game-copy"><small>Selected game</small><strong id="match-setup-game">Chowka</strong></span>
+              </div>
+              <div class="setup-list" aria-label="Match setup preview">
+                <div class="setup-row"><strong>Players</strong><span>Choose seats next</span></div>
+                <div class="setup-row"><strong>Table details</strong><span>Confirm before play</span></div>
+              </div>
+              <p class="setup-boundary">Exploratory prototype boundary · No production route or setup defaults are implied here.</p>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <aside class="analysis-card">
+        <div class="analysis-heading">
+          <p class="eyebrow" id="concept-label">Concept C · Recommended</p>
+          <h2 id="concept-title">Focused courtyard hybrid</h2>
+          <p id="concept-summary">Balances atmosphere with immediate purpose: one leading choice, a visible next option, and the courtyard still doing emotional work.</p>
+        </div>
+        <dl class="tradeoffs">
+          <div class="tradeoff"><dt>Strength</dt><dd id="concept-strength">Fastest to understand without making the welcome feel transactional.</dd></div>
+          <div class="tradeoff"><dt>Watch</dt><dd id="concept-watch">The lead card must adapt carefully so returning players do not feel pushed.</dd></div>
+          <div class="tradeoff"><dt>Best for</dt><dd id="concept-best">A product landing page that feels warm first and decisive second.</dd></div>
+        </dl>
+        <div class="shared-decisions">
+          <h3>Shared across all three</h3>
+          <ul>
+            <li>Adaptive arrival for first visit, return, and resumable play.</li>
+            <li>Golden-hour courtyard as the persistent emotional setting.</li>
+            <li>Quiet Grandma host who welcomes without blocking.</li>
+            <li>Animated game previews that reveal play, not decoration.</li>
+            <li>Game choice proceeds directly to Match setup.</li>
+          </ul>
+        </div>
+      </aside>
+    </section>
+
+    <p class="checkpoint-note"><strong>Review boundary:</strong> C is recommended only as the strongest direction to explore next. A, B, and C remain <strong>Exploring</strong>; this checkpoint records comparison, not approval.</p>
+    <p class="sr-only" id="review-announcement" aria-live="polite"></p>
+  </div>
+
+  <script>
+    (function () {
+      var root = document.getElementById("landing-page-review");
+      if (!root) return;
+
+      var concepts = {
+        hybrid: {
+          label: "Concept C · Recommended",
+          title: "Focused courtyard hybrid",
+          summary: "Balances atmosphere with immediate purpose: one leading choice, a visible next option, and the courtyard still doing emotional work.",
+          strength: "Fastest to understand without making the welcome feel transactional.",
+          watch: "The lead card must adapt carefully so returning players do not feel pushed.",
+          best: "A product landing page that feels warm first and decisive second.",
+          arrivalMode: "Adaptive arrival · familiar return",
+          arrivalTitle: "Welcome back, kanna.",
+          arrivalCopy: "Chowka is ready where you left it—or choose a different game."
+        },
+        rail: {
+          label: "Concept A",
+          title: "Living scene rail",
+          summary: "Keeps the home alive around a broad horizontal rail, letting players browse without leaving Grandma's courtyard.",
+          strength: "Most cinematic and gives animated game previews the most room to invite curiosity.",
+          watch: "More visible choices can compete with the quiet welcome and increase browsing time.",
+          best: "A growing library where discovery matters as much as speedy return play.",
+          arrivalMode: "Adaptive arrival · open invitation",
+          arrivalTitle: "Come sit for a while.",
+          arrivalCopy: "Grandma has set out the games. Slide through the rail and choose one."
+        },
+        discovery: {
+          label: "Concept B",
+          title: "Courtyard discovery",
+          summary: "Brings game covers forward in a compact discovery shelf while the architecture provides a warm, recognizable frame.",
+          strength: "Makes the available game library easiest to scan and compare at a glance.",
+          watch: "Grandma and the living scene become quieter, so the page can feel closer to a catalog.",
+          best: "Players arriving to explore first, especially as the library expands.",
+          arrivalMode: "Adaptive arrival · browse mode",
+          arrivalTitle: "What shall we play today?",
+          arrivalCopy: "Start with a favorite or discover another game from the courtyard shelf."
+        }
+      };
+
+      var tabs = Array.from(root.querySelectorAll("[data-concept]"));
+      var games = Array.from(root.querySelectorAll("[data-game]"));
+      var screen = root.querySelector("[data-concept-view]");
+      var panel = root.querySelector("[role='tabpanel']");
+      var announcement = root.querySelector("#review-announcement");
+      var matchButton = root.querySelector("#match-button");
+      var landingView = root.querySelector("#landing-view");
+      var matchSetupView = root.querySelector("#match-setup-view");
+      var matchSetupHeading = root.querySelector("#match-setup-heading");
+      var backButton = root.querySelector("#back-to-courtyard");
+      var selectedGame = "Chowka";
+
+      function setText(id, value) {
+        var target = root.querySelector("#" + id);
+        if (target) target.textContent = value;
+      }
+
+      function gameSupportsConcept(game, conceptKey) {
+        return (game.getAttribute("data-concepts") || "")
+          .split(/\s+/)
+          .includes(conceptKey);
+      }
+
+      function selectGame(game, announce) {
+        if (!game) return;
+        selectedGame = game.getAttribute("data-game") || "Game";
+        games.forEach(function (item) {
+          item.setAttribute("aria-pressed", String(item === game));
+        });
+        setText("direct-path", selectedGame + " selected → Match setup");
+        if (announce && announcement) {
+          announcement.textContent = selectedGame + " selected. Continue to Match setup.";
+        }
+      }
+
+      function normalizeGameForConcept(conceptKey) {
+        var selected = games.find(function (game) {
+          return game.getAttribute("data-game") === selectedGame && gameSupportsConcept(game, conceptKey);
+        });
+        var fallback = selected || games.find(function (game) {
+          return gameSupportsConcept(game, conceptKey);
+        });
+        selectGame(fallback, false);
+      }
+
+      function returnToLanding(moveFocus) {
+        if (!landingView || !matchSetupView) return;
+        matchSetupView.hidden = true;
+        landingView.hidden = false;
+        if (moveFocus && matchButton) matchButton.focus();
+      }
+
+      function selectConcept(tab, moveFocus) {
+        var key = tab.getAttribute("data-concept");
+        var concept = concepts[key];
+        if (!concept || !screen) return;
+
+        returnToLanding(false);
+        normalizeGameForConcept(key);
+
+        tabs.forEach(function (item) {
+          var selected = item === tab;
+          item.setAttribute("aria-selected", String(selected));
+          item.tabIndex = selected ? 0 : -1;
+        });
+
+        screen.setAttribute("data-concept-view", key);
+        if (panel) panel.setAttribute("aria-labelledby", tab.id);
+        setText("concept-label", concept.label);
+        setText("concept-title", concept.title);
+        setText("concept-summary", concept.summary);
+        setText("concept-strength", concept.strength);
+        setText("concept-watch", concept.watch);
+        setText("concept-best", concept.best);
+        setText("arrival-mode", concept.arrivalMode);
+        setText("arrival-title", concept.arrivalTitle);
+        setText("arrival-copy", concept.arrivalCopy);
+        if (announcement) announcement.textContent = concept.title + " preview selected.";
+        if (moveFocus) tab.focus();
+      }
+
+      tabs.forEach(function (tab, index) {
+        tab.addEventListener("click", function () {
+          selectConcept(tab, false);
+        });
+
+        tab.addEventListener("keydown", function (event) {
+          var targetIndex = index;
+          var handled = true;
+          if (event.key === "ArrowRight") targetIndex = (index + 1) % tabs.length;
+          else if (event.key === "ArrowLeft") targetIndex = (index - 1 + tabs.length) % tabs.length;
+          else if (event.key === "Home") targetIndex = 0;
+          else if (event.key === "End") targetIndex = tabs.length - 1;
+          else handled = false;
+          if (!handled) return;
+          event.preventDefault();
+          selectConcept(tabs[targetIndex], true);
+        });
+      });
+
+      games.forEach(function (game) {
+        game.addEventListener("click", function () {
+          selectGame(game, true);
+        });
+      });
+
+      if (matchButton && landingView && matchSetupView && matchSetupHeading) {
+        matchButton.addEventListener("click", function () {
+          setText("match-setup-game", selectedGame);
+          landingView.hidden = true;
+          matchSetupView.hidden = false;
+          matchSetupHeading.focus();
+          if (announcement) announcement.textContent = selectedGame + " Match setup opened.";
+        });
+      }
+
+      if (backButton && landingView && matchSetupView && matchButton) {
+        backButton.addEventListener("click", function () {
+          returnToLanding(true);
+          if (announcement) announcement.textContent = "Returned to the courtyard comparison.";
+        });
+      }
+    })();
+  </script>
+</div>
+</main>
+</body>
+</html>
