@@ -4,4 +4,4 @@ This directory holds topic-specific UI/UX explorations linked from the stable pu
 
 - [Gameplay layout comparison](../index.html) — archived exploratory baseline
 - [Landing-page and game-selection review](landing-page-game-selection.html) — exploratory
-- [Shared character style directions](character-style-directions.html) — Exploring
+- [Shared character style directions](character-style-directions.html) — Selected (Option 1: Courtyard Clothfolk)

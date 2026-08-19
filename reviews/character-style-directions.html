@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Compare three exploratory shared character-art families for Grandma's Board Games.">
+  <meta name="description" content="Review the selected shared character-art family and two exploratory alternatives for Grandma's Board Games.">
   <title>Grandma's Board Games · Character Style Directions</title>
   <style>
     :root {
@@ -159,6 +159,11 @@
       box-shadow: var(--shadow);
     }
 
+    .direction-card.is-selected {
+      border-color: rgba(49, 94, 214, 0.68);
+      box-shadow: 0 24px 60px rgba(49, 94, 214, 0.18);
+    }
+
     .direction-card:nth-child(2) { margin-top: 36px; }
 
     .image-link {
@@ -218,6 +223,32 @@
       background: rgba(23, 37, 63, 0.06);
       font-size: 0.75rem;
       font-weight: 700;
+    }
+
+    .option-tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 6px;
+    }
+
+    .status-tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 5px 9px;
+      border-radius: 999px;
+      color: var(--muted);
+      background: rgba(23, 37, 63, 0.06);
+      font-size: 0.72rem;
+      font-weight: 850;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .status-tag.selected {
+      color: #fff;
+      background: linear-gradient(110deg, var(--blue), var(--orange));
     }
 
     h2 {
@@ -306,44 +337,44 @@
     <header>
       <div class="topbar">
         <a class="back-link" href="../index.html" aria-label="Back to all design checkpoints">← All checkpoints</a>
-        <span class="review-state">Exploring · choose one</span>
+        <span class="review-state">Selected · Option 1</span>
       </div>
 
       <div class="hero">
         <p class="eyebrow">Grandma's Board Games · Character checkpoint</p>
         <h1>Character style directions</h1>
-        <p class="lede">Choose the construction language for Grandma and the player roles. Every direction keeps them in <strong>one shared character-art family</strong>; age, silhouette, costume, pose, and expression create the differences.</p>
+        <p class="lede">Option 1 now carries forward as the shared construction language for Grandma and the player roles. Age, silhouette, costume, pose, and expression create the differences within <strong>one shared character-art family</strong>.</p>
       </div>
 
       <section class="locked-strip" aria-label="Rules locked across every direction">
         <div class="locked-item"><strong>Shared family</strong><span>Grandma and players use the same rendering grammar.</span></div>
         <div class="locked-item"><strong>Role clarity</strong><span>Age, silhouette, costume, pose, expression, and scale do the work.</span></div>
         <div class="locked-item"><strong>Motion ready</strong><span>idle · attention · interaction · reaction</span></div>
-        <div class="locked-item"><strong>Still open</strong><span>Exact character construction remains open until one direction is selected.</span></div>
+        <div class="locked-item"><strong>Selected construction</strong><span>Detailed soft-textile 3D. Proportions, weave density, rigging, poses, and timing remain open.</span></div>
       </section>
     </header>
 
     <main>
       <section class="directions" aria-label="Three character style directions">
-        <article class="direction-card">
+        <article class="direction-card is-selected" data-status="selected">
           <a class="image-link" href="assets/character-directions/character-direction-1-textile.webp" target="_blank" rel="noreferrer" aria-label="Open the full textile character direction sheet">
             <img src="assets/character-directions/character-direction-1-textile.webp" width="960" height="1440" alt="Grandma and four player characters rendered as one detailed soft-textile figure family, with avatar crops and expressive poses.">
           </a>
           <div class="direction-copy">
-            <div class="option-line"><span class="option-number">Option 1</span><span class="material-tag">Soft textile 3D</span></div>
+            <div class="option-line"><span class="option-number">Option 1</span><span class="option-tags"><span class="material-tag">Soft textile 3D</span><span class="status-tag selected">Selected</span></span></div>
             <h2>Courtyard Clothfolk</h2>
-            <p class="direction-summary">A tactile, affectionate family with finely woven surfaces and restrained seams confined to the characters.</p>
+            <p class="direction-summary"><strong>Detailed soft-textile 3D.</strong> A tactile, affectionate family with finely woven surfaces and restrained seams confined to the characters.</p>
             <div class="tradeoff"><strong>Strength</strong><span>Most distinctive handmade identity and strongest emotional warmth.</span></div>
             <div class="tradeoff watch"><strong>Watch</strong><span>Texture detail must simplify cleanly inside small HUD avatars.</span></div>
           </div>
         </article>
 
-        <article class="direction-card">
+        <article class="direction-card" data-status="exploring">
           <a class="image-link" href="assets/character-directions/character-direction-2-sculptural.webp" target="_blank" rel="noreferrer" aria-label="Open the full sculptural character direction sheet">
             <img src="assets/character-directions/character-direction-2-sculptural.webp" width="960" height="1440" loading="lazy" alt="Grandma and four player characters rendered as one polished hand-painted sculptural family, with avatar crops and expressive poses.">
           </a>
           <div class="direction-copy">
-            <div class="option-line"><span class="option-number">Option 2</span><span class="material-tag">Painted sculpture 3D</span></div>
+            <div class="option-line"><span class="option-number">Option 2</span><span class="option-tags"><span class="material-tag">Painted sculpture 3D</span><span class="status-tag">Exploring</span></span></div>
             <h2>Painted Maquettes</h2>
             <p class="direction-summary">Rounded, hand-painted figures with bold silhouettes and the clearest premium mobile-game readability.</p>
             <div class="tradeoff"><strong>Strength</strong><span>Best clarity at gameplay scale and simplest path to expressive rigged motion.</span></div>
@@ -351,12 +382,12 @@
           </div>
         </article>
 
-        <article class="direction-card">
+        <article class="direction-card" data-status="exploring">
           <a class="image-link" href="assets/character-directions/character-direction-3-painterly.webp" target="_blank" rel="noreferrer" aria-label="Open the full painterly character direction sheet">
             <img src="assets/character-directions/character-direction-3-painterly.webp" width="960" height="1440" loading="lazy" alt="Grandma and four player characters rendered as one painterly two-and-a-half-dimensional animation family, with avatar crops and expressive poses.">
           </a>
           <div class="direction-copy">
-            <div class="option-line"><span class="option-number">Option 3</span><span class="material-tag">Painterly 2D/2.5D</span></div>
+            <div class="option-line"><span class="option-number">Option 3</span><span class="option-tags"><span class="material-tag">Painterly 2D/2.5D</span><span class="status-tag">Exploring</span></span></div>
             <h2>Memory Storybook</h2>
             <p class="direction-summary">Hand-painted colour shapes and expressive silhouettes that sit naturally inside the animated Memory Home.</p>
             <div class="tradeoff"><strong>Strength</strong><span>Best harmony with the colourful anime environment and cinematic scene motion.</span></div>
@@ -366,12 +397,12 @@
       </section>
 
       <section class="decision-note" aria-labelledby="decision-title">
-        <h2 id="decision-title">Only the character family is being chosen here.</h2>
-        <p>The background remains colourful hand-painted anime; the board remains linen with threaded paths; pawns, dice, and cowries remain polished sculptural objects; and HUD components remain SARVAM-inspired. Selecting <code>1</code>, <code>2</code>, or <code>3</code> will not spread that character material to the rest of the world.</p>
+        <h2 id="decision-title">Option 1 changes the characters, not the whole world.</h2>
+        <p>The background remains colourful hand-painted anime; the board remains linen with threaded paths; pawns, dice, and cowries remain polished sculptural objects; and HUD components remain SARVAM-inspired. The selected textile construction stays local to Grandma and the player characters.</p>
       </section>
     </main>
 
-    <footer>Exploratory checkpoint · No character direction is approved yet.</footer>
+    <footer>Selected checkpoint · Option 1 carries forward; character refinement remains open.</footer>
   </div>
 </body>
 </html>
