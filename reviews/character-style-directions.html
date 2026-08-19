@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Compare three exploratory shared character-art families for Grandma's Board Games.">
+  <title>Grandma's Board Games · Character Style Directions</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #17253f;
+      --muted: #5b6475;
+      --paper: #fffaf0;
+      --paper-deep: #f4ebdb;
+      --line: rgba(23, 37, 63, 0.14);
+      --blue: #315ed6;
+      --orange: #ee7d3e;
+      --green: #4f7d64;
+      --focus: #153db8;
+      --shadow: 0 24px 60px rgba(39, 48, 69, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { background: var(--paper-deep); }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 12% 3%, rgba(49, 94, 214, 0.12), transparent 28rem),
+        radial-gradient(circle at 92% 10%, rgba(238, 125, 62, 0.13), transparent 30rem),
+        var(--paper);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+    }
+
+    a { color: inherit; }
+
+    a:focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 4px;
+    }
+
+    .page-shell {
+      width: min(1500px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 28px 0 64px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 250, 240, 0.82);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .review-state {
+      display: inline-flex;
+      min-height: 40px;
+      align-items: center;
+      padding: 8px 15px;
+      border-radius: 18px 18px 6px 6px;
+      color: #fff;
+      background: linear-gradient(110deg, var(--blue), var(--orange));
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .hero {
+      max-width: 980px;
+      margin-bottom: 36px;
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--blue);
+      font-size: 0.82rem;
+      font-weight: 850;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 16ch;
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.5rem, 6vw, 5.8rem);
+      font-weight: 500;
+      letter-spacing: -0.045em;
+      line-height: 0.98;
+    }
+
+    .lede {
+      max-width: 72ch;
+      margin: 22px 0 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 1.5vw, 1.22rem);
+    }
+
+    .locked-strip {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1px;
+      overflow: hidden;
+      margin: 34px 0 42px;
+      border: 1px solid var(--line);
+      border-radius: 34px 34px 12px 12px;
+      background: var(--line);
+    }
+
+    .locked-item {
+      min-height: 116px;
+      padding: 22px;
+      background: rgba(255, 250, 240, 0.94);
+    }
+
+    .locked-item strong,
+    .locked-item span { display: block; }
+
+    .locked-item strong {
+      margin-bottom: 6px;
+      font-size: 0.76rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .locked-item span { color: var(--muted); }
+
+    .directions {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+      align-items: start;
+    }
+
+    .direction-card {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 44px 44px 16px 16px;
+      background: rgba(255, 255, 255, 0.76);
+      box-shadow: var(--shadow);
+    }
+
+    .direction-card:nth-child(2) { margin-top: 36px; }
+
+    .image-link {
+      position: relative;
+      display: block;
+      overflow: hidden;
+      aspect-ratio: 2 / 3;
+      background: #f1eadf;
+    }
+
+    .image-link::after {
+      position: absolute;
+      right: 16px;
+      bottom: 16px;
+      padding: 9px 12px;
+      border-radius: 999px;
+      color: #fff;
+      background: rgba(23, 37, 63, 0.82);
+      content: "Open full sheet ↗";
+      font-size: 0.78rem;
+      font-weight: 750;
+      backdrop-filter: blur(8px);
+    }
+
+    .image-link img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 220ms ease;
+    }
+
+    .image-link:hover img { transform: scale(1.012); }
+
+    .direction-copy { padding: 24px 24px 28px; }
+
+    .option-line {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .option-number {
+      color: var(--blue);
+      font-size: 0.76rem;
+      font-weight: 850;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .material-tag {
+      padding: 5px 9px;
+      border-radius: 999px;
+      color: var(--muted);
+      background: rgba(23, 37, 63, 0.06);
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    h2 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.55rem, 2.4vw, 2.1rem);
+      font-weight: 500;
+      line-height: 1.05;
+    }
+
+    .direction-summary {
+      min-height: 5.1em;
+      margin: 14px 0 20px;
+      color: var(--muted);
+    }
+
+    .tradeoff {
+      display: grid;
+      grid-template-columns: 74px 1fr;
+      gap: 10px;
+      padding: 13px 0;
+      border-top: 1px solid var(--line);
+      font-size: 0.91rem;
+    }
+
+    .tradeoff strong { color: var(--green); }
+    .tradeoff.watch strong { color: #b3532f; }
+
+    .decision-note {
+      display: grid;
+      grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+      gap: 28px;
+      margin-top: 48px;
+      padding: clamp(24px, 4vw, 44px);
+      border-radius: 48px 48px 16px 16px;
+      color: #fff;
+      background:
+        linear-gradient(125deg, rgba(49, 94, 214, 0.96), rgba(238, 125, 62, 0.92)),
+        var(--blue);
+    }
+
+    .decision-note h2 { max-width: 18ch; }
+    .decision-note p { margin: 0; color: rgba(255, 255, 255, 0.9); }
+
+    .decision-note code {
+      padding: 2px 6px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.14);
+      color: inherit;
+      font-family: inherit;
+      font-weight: 800;
+    }
+
+    footer {
+      padding-top: 34px;
+      color: var(--muted);
+      font-size: 0.88rem;
+      text-align: center;
+    }
+
+    @media (max-width: 980px) {
+      .locked-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .directions { grid-template-columns: 1fr; max-width: 720px; }
+      .direction-card:nth-child(2) { margin-top: 0; }
+      .direction-summary { min-height: 0; }
+    }
+
+    @media (max-width: 600px) {
+      .page-shell { width: min(100% - 20px, 1500px); padding-top: 16px; }
+      .topbar { align-items: flex-start; }
+      .review-state { max-width: 136px; justify-content: center; text-align: center; }
+      .locked-strip { grid-template-columns: 1fr; border-radius: 24px 24px 10px 10px; }
+      .locked-item { min-height: 0; }
+      .direction-card { border-radius: 30px 30px 14px 14px; }
+      .direction-copy { padding: 20px; }
+      .decision-note { grid-template-columns: 1fr; border-radius: 30px 30px 14px 14px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-shell">
+    <header>
+      <div class="topbar">
+        <a class="back-link" href="../index.html" aria-label="Back to all design checkpoints">← All checkpoints</a>
+        <span class="review-state">Exploring · choose one</span>
+      </div>
+
+      <div class="hero">
+        <p class="eyebrow">Grandma's Board Games · Character checkpoint</p>
+        <h1>Character style directions</h1>
+        <p class="lede">Choose the construction language for Grandma and the player roles. Every direction keeps them in <strong>one shared character-art family</strong>; age, silhouette, costume, pose, and expression create the differences.</p>
+      </div>
+
+      <section class="locked-strip" aria-label="Rules locked across every direction">
+        <div class="locked-item"><strong>Shared family</strong><span>Grandma and players use the same rendering grammar.</span></div>
+        <div class="locked-item"><strong>Role clarity</strong><span>Age, silhouette, costume, pose, expression, and scale do the work.</span></div>
+        <div class="locked-item"><strong>Motion ready</strong><span>idle · attention · interaction · reaction</span></div>
+        <div class="locked-item"><strong>Still open</strong><span>Exact character construction remains open until one direction is selected.</span></div>
+      </section>
+    </header>
+
+    <main>
+      <section class="directions" aria-label="Three character style directions">
+        <article class="direction-card">
+          <a class="image-link" href="assets/character-directions/character-direction-1-textile.webp" target="_blank" rel="noreferrer" aria-label="Open the full textile character direction sheet">
+            <img src="assets/character-directions/character-direction-1-textile.webp" width="960" height="1440" alt="Grandma and four player characters rendered as one detailed soft-textile figure family, with avatar crops and expressive poses.">
+          </a>
+          <div class="direction-copy">
+            <div class="option-line"><span class="option-number">Option 1</span><span class="material-tag">Soft textile 3D</span></div>
+            <h2>Courtyard Clothfolk</h2>
+            <p class="direction-summary">A tactile, affectionate family with finely woven surfaces and restrained seams confined to the characters.</p>
+            <div class="tradeoff"><strong>Strength</strong><span>Most distinctive handmade identity and strongest emotional warmth.</span></div>
+            <div class="tradeoff watch"><strong>Watch</strong><span>Texture detail must simplify cleanly inside small HUD avatars.</span></div>
+          </div>
+        </article>
+
+        <article class="direction-card">
+          <a class="image-link" href="assets/character-directions/character-direction-2-sculptural.webp" target="_blank" rel="noreferrer" aria-label="Open the full sculptural character direction sheet">
+            <img src="assets/character-directions/character-direction-2-sculptural.webp" width="960" height="1440" loading="lazy" alt="Grandma and four player characters rendered as one polished hand-painted sculptural family, with avatar crops and expressive poses.">
+          </a>
+          <div class="direction-copy">
+            <div class="option-line"><span class="option-number">Option 2</span><span class="material-tag">Painted sculpture 3D</span></div>
+            <h2>Painted Maquettes</h2>
+            <p class="direction-summary">Rounded, hand-painted figures with bold silhouettes and the clearest premium mobile-game readability.</p>
+            <div class="tradeoff"><strong>Strength</strong><span>Best clarity at gameplay scale and simplest path to expressive rigged motion.</span></div>
+            <div class="tradeoff watch"><strong>Watch</strong><span>Surface treatment must stay specific enough to avoid generic game characters.</span></div>
+          </div>
+        </article>
+
+        <article class="direction-card">
+          <a class="image-link" href="assets/character-directions/character-direction-3-painterly.webp" target="_blank" rel="noreferrer" aria-label="Open the full painterly character direction sheet">
+            <img src="assets/character-directions/character-direction-3-painterly.webp" width="960" height="1440" loading="lazy" alt="Grandma and four player characters rendered as one painterly two-and-a-half-dimensional animation family, with avatar crops and expressive poses.">
+          </a>
+          <div class="direction-copy">
+            <div class="option-line"><span class="option-number">Option 3</span><span class="material-tag">Painterly 2D/2.5D</span></div>
+            <h2>Memory Storybook</h2>
+            <p class="direction-summary">Hand-painted colour shapes and expressive silhouettes that sit naturally inside the animated Memory Home.</p>
+            <div class="tradeoff"><strong>Strength</strong><span>Best harmony with the colourful anime environment and cinematic scene motion.</span></div>
+            <div class="tradeoff watch"><strong>Watch</strong><span>Avatar crops need disciplined silhouettes so painterly detail stays readable.</span></div>
+          </div>
+        </article>
+      </section>
+
+      <section class="decision-note" aria-labelledby="decision-title">
+        <h2 id="decision-title">Only the character family is being chosen here.</h2>
+        <p>The background remains colourful hand-painted anime; the board remains linen with threaded paths; pawns, dice, and cowries remain polished sculptural objects; and HUD components remain SARVAM-inspired. Selecting <code>1</code>, <code>2</code>, or <code>3</code> will not spread that character material to the rest of the world.</p>
+      </section>
+    </main>
+
+    <footer>Exploratory checkpoint · No character direction is approved yet.</footer>
+  </div>
+</body>
+</html>
