@@ -36,10 +36,12 @@ jobs:
       - name: Verify review surface
         run: |
           test -f index.html
-          grep -q "Gameplay Layout Review" index.html
-          grep -q 'data-layout-button="board-first"' index.html
-          grep -q 'data-layout-button="balanced"' index.html
-          grep -q 'data-layout-button="story-rich"' index.html
+          test -f reviews/online-turn-edge-mat/index.html
+          test -f reviews/assets/online-turn-edge-mat-storyboard.png
+          grep -q "Design review" index.html
+          grep -q 'href="reviews/online-turn-edge-mat/"' index.html
+          grep -q "Edge Throw Mat + Remote Touch Echo" reviews/online-turn-edge-mat/index.html
+          grep -q "Selected" reviews/online-turn-edge-mat/index.html
 
       - name: Upload review surface
         uses: actions/upload-pages-artifact@v4
