@@ -36,12 +36,13 @@ jobs:
       - name: Verify review surface
         run: |
           test -f index.html
-          test -f reviews/online-turn-edge-mat/index.html
-          test -f reviews/assets/online-turn-edge-mat-storyboard.png
+          test -f reviews/online-turn-open-edge-landing/index.html
+          test -f reviews/assets/online-turn-open-edge-landing-storyboard.png
           grep -q "Design review" index.html
-          grep -q 'href="reviews/online-turn-edge-mat/"' index.html
-          grep -q "Edge Throw Mat + Remote Touch Echo" reviews/online-turn-edge-mat/index.html
-          grep -q "Selected" reviews/online-turn-edge-mat/index.html
+          grep -q 'href="reviews/online-turn-open-edge-landing/"' index.html
+          grep -q "Open Edge Landing + Remote Touch Echo" reviews/online-turn-open-edge-landing/index.html
+          grep -q "Selected" reviews/online-turn-open-edge-landing/index.html
+          node tests/verify-open-edge-review.mjs
 
       - name: Upload review surface
         uses: actions/upload-pages-artifact@v4

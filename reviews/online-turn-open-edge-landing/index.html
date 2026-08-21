@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Selected six-state Open Edge Landing + Remote Touch Echo storyboard for Grandma's Board Games.">
+  <title>Open Edge Landing + Remote Touch Echo · Grandma's Board Games</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --navy: #0a2342;
+      --cream: #f7f1e3;
+      --orange: #e96822;
+      --ink: #172235;
+      --muted: #667080;
+      --line: rgba(10, 35, 66, 0.15);
+      --card: rgba(255, 255, 255, 0.62);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 85% 0%, rgba(233, 104, 34, 0.12), transparent 35rem),
+        var(--cream);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+    }
+
+    a { color: inherit; }
+
+    .shell { width: min(1240px, calc(100% - 32px)); margin: 0 auto; }
+
+    nav { padding: 24px 0; }
+    nav a { color: var(--navy); font-weight: 760; text-decoration: none; }
+    nav a:hover, nav a:focus-visible { text-decoration: underline; }
+
+    header { max-width: 900px; padding: 24px 0 32px; }
+
+    .badge {
+      display: inline-flex;
+      padding: 6px 10px;
+      border-radius: 999px;
+      color: #fff;
+      background: var(--orange);
+      font-size: 0.72rem;
+      font-weight: 850;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1 {
+      margin: 14px 0 14px;
+      color: var(--navy);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.4rem, 7vw, 5.6rem);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+    }
+
+    .lede { max-width: 760px; margin-bottom: 0; color: var(--muted); font-size: 1.06rem; }
+
+    figure {
+      margin: 0 0 44px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: #fff;
+      box-shadow: 0 24px 70px rgba(42, 28, 12, 0.13);
+    }
+
+    figure img { display: block; width: 100%; height: auto; }
+    figcaption { padding: 14px 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.88rem; }
+
+    .state-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-bottom: 48px;
+    }
+
+    .state {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--card);
+    }
+
+    .state span { color: var(--orange); font-size: 0.76rem; font-weight: 850; letter-spacing: 0.08em; }
+    .state h3 { margin: 10px 0 6px; color: var(--navy); }
+    .state p { margin: 0; color: var(--muted); font-size: 0.91rem; }
+
+    .decisions {
+      display: grid;
+      grid-template-columns: 1.35fr 0.65fr;
+      gap: 18px;
+      margin-bottom: 56px;
+    }
+
+    .panel {
+      padding: clamp(22px, 4vw, 34px);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: var(--card);
+    }
+
+    .panel h2 { color: var(--navy); }
+    ul { margin: 0; padding-left: 1.2rem; }
+    li + li { margin-top: 8px; }
+    .open { border-top: 4px solid var(--orange); }
+
+    footer { padding: 24px 0 42px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.88rem; }
+
+    @media (max-width: 780px) {
+      .state-grid { grid-template-columns: 1fr 1fr; }
+      .decisions { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 520px) {
+      .state-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <nav><a href="../../">← All design checkpoints</a></nav>
+
+    <header>
+      <span class="badge">Selected</span>
+      <h1>Open Edge Landing + Remote Touch Echo</h1>
+      <p class="lede">A viewer-relative online roll: cowries land in open space beyond the active edge; remote viewers see a brief touch echo rather than another player's hand or a dedicated mat.</p>
+    </header>
+
+    <main>
+      <figure>
+        <img src="../assets/online-turn-open-edge-landing-storyboard.png" alt="Six consistent top-down gameplay frames: waiting for Riya, an open-edge cowrie landing communicated remotely by a brief touch echo, settled result four, legal-pawn selection, reconnecting, and a reduced-motion result-first state.">
+        <figcaption>Six-state checkpoint · same board, pawn positions, camera, and HUD across every frame.</figcaption>
+      </figure>
+
+      <section class="state-grid" aria-label="Storyboard states">
+        <article class="state"><span>01</span><h3>Waiting</h3><p>Riya's name and home state turn orange; the board remains quiet and fully visible.</p></article>
+        <article class="state"><span>02</span><h3>Remote touch echo</h3><p>Riya's view shows the local release into the open area beyond her edge; remote views show only a brief edge-origin touch echo before the same landing.</p></article>
+        <article class="state"><span>03</span><h3>Settled result</h3><p>Every player sees the same settled cowries and compact numeric result before move selection begins.</p></article>
+        <article class="state"><span>04</span><h3>Choose pawn</h3><p>Only Riya's playable pawn receives the restrained magical lift and glow; observers cannot act.</p></article>
+        <article class="state"><span>05</span><h3>Reconnect</h3><p>The current result and legal-pawn state stay visible while a familiar Wi-Fi-off icon sits beside the affected player's name.</p></article>
+        <article class="state"><span>06</span><h3>Reduced motion</h3><p>The settled result appears immediately with no ripple, airborne shells, trails, or replayed flourish.</p></article>
+      </section>
+
+      <section class="decisions">
+        <article class="panel">
+          <h2>Selected interaction</h2>
+          <ul>
+            <li>The cowries land in an open, unframed area just beyond the active player's edge; no dedicated mat or tray is shown.</li>
+            <li>Remote viewers never see another player's hand or anatomy.</li>
+            <li>A transient light ripple defines touchdown during the roll and disappears after the cowries settle.</li>
+            <li>The shared settled result is authoritative; animation only communicates it.</li>
+            <li>Only legal pawns glow, and the emphasis lasts until the owning player commits a move.</li>
+            <li>Colour, motion, the compact result numeral, and familiar connection icon replace ordinary state sentences.</li>
+            <li>The textile board, sculptural pieces, painted environment, and clean HUD stay materially distinct.</li>
+          </ul>
+        </article>
+        <aside class="panel open">
+          <h2>Still open</h2>
+          <p>Landing-area spacing and contrast, touch-echo timing and shape, directional sound and haptics, reconnect persistence, and whether an online turn timer is needed.</p>
+        </aside>
+      </section>
+    </main>
+
+    <footer>This checkpoint remains Selected until the visual treatment is explicitly approved.</footer>
+  </div>
+</body>
+</html>
