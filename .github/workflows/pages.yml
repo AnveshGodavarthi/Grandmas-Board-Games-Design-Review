@@ -41,7 +41,7 @@ jobs:
           grep -q "Design review" index.html
           grep -q 'href="reviews/online-turn-open-edge-landing/"' index.html
           grep -q "Open Edge Landing + Remote Touch Echo" reviews/online-turn-open-edge-landing/index.html
-          grep -q "Selected" reviews/online-turn-open-edge-landing/index.html
+          grep -q "Approved" reviews/online-turn-open-edge-landing/index.html
           node tests/verify-open-edge-review.mjs
 
       - name: Upload review surface
