@@ -38,11 +38,16 @@ jobs:
           test -f index.html
           test -f reviews/online-turn-open-edge-landing/index.html
           test -f reviews/assets/online-turn-open-edge-landing-storyboard.png
+          test -f reviews/ashta-chamma-veranda/index.html
+          test -f reviews/assets/ashta-chamma-veranda-composition.webp
           grep -q "Design review" index.html
           grep -q 'href="reviews/online-turn-open-edge-landing/"' index.html
+          grep -q 'href="reviews/ashta-chamma-veranda/"' index.html
           grep -q "Open Edge Landing + Remote Touch Echo" reviews/online-turn-open-edge-landing/index.html
           grep -q "Approved" reviews/online-turn-open-edge-landing/index.html
+          grep -q "Ashta Chamma, at home on the veranda" reviews/ashta-chamma-veranda/index.html
           node tests/verify-open-edge-review.mjs
+          node tests/verify-ashta-chamma-veranda.mjs
 
       - name: Upload review surface
         uses: actions/upload-pages-artifact@v4

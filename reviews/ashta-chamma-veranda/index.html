@@ -1,0 +1,839 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Selected veranda composition and exact layout blueprint for the Ashta Chamma-first vertical slice of Grandma's Board Games.">
+  <title>Ashta Chamma Veranda · Grandma's Board Games</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --navy: #0b2948;
+      --navy-2: #16476b;
+      --cream: #fbf4e5;
+      --paper: #fffaf0;
+      --ink: #172433;
+      --muted: #68727d;
+      --orange: #e76f2e;
+      --orange-dark: #b94a18;
+      --teal: #176b67;
+      --leaf: #4d7a43;
+      --gold: #d7a83e;
+      --linen: #ead9b9;
+      --wood: #643a25;
+      --line: rgba(11, 41, 72, 0.15);
+      --shadow: 0 28px 80px rgba(52, 33, 18, 0.16);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 8% 2%, rgba(231, 111, 46, 0.14), transparent 28rem),
+        radial-gradient(circle at 95% 14%, rgba(23, 107, 103, 0.11), transparent 32rem),
+        var(--cream);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+    }
+
+    a { color: inherit; }
+    button { font: inherit; }
+    img { max-width: 100%; }
+
+    .shell {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 0.9rem;
+    }
+
+    nav a {
+      font-weight: 760;
+      text-decoration: none;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--orange-dark);
+      font-size: 0.72rem;
+      font-weight: 850;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .status::before {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--orange);
+      box-shadow: 0 0 0 4px rgba(231, 111, 46, 0.14);
+      content: "";
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 390px);
+      gap: clamp(30px, 7vw, 90px);
+      align-items: end;
+      padding: clamp(48px, 9vw, 104px) 0 52px;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--orange-dark);
+      font-size: 0.78rem;
+      font-weight: 850;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1, h2 {
+      color: var(--navy);
+      font-family: Georgia, "Times New Roman", serif;
+      letter-spacing: -0.03em;
+    }
+
+    h1 {
+      max-width: 760px;
+      margin-bottom: 20px;
+      font-size: clamp(2.7rem, 7vw, 6rem);
+      line-height: 0.95;
+    }
+
+    h2 {
+      margin-bottom: 12px;
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 1.02;
+    }
+
+    h3 { color: var(--navy); line-height: 1.2; }
+
+    .lede {
+      max-width: 720px;
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 2vw, 1.2rem);
+    }
+
+    .header-note {
+      padding: 22px;
+      border: 1px solid rgba(231, 111, 46, 0.24);
+      border-radius: 18px;
+      background: rgba(255, 250, 240, 0.76);
+    }
+
+    .header-note strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--navy);
+    }
+
+    .header-note p { margin: 0; color: var(--muted); font-size: 0.92rem; }
+
+    main { display: grid; gap: 88px; padding-bottom: 88px; }
+
+    .section-intro {
+      max-width: 740px;
+      margin-bottom: 28px;
+    }
+
+    .section-intro p { margin-bottom: 0; color: var(--muted); }
+
+    .mood-grid {
+      display: grid;
+      grid-template-columns: minmax(280px, 0.78fr) minmax(0, 1.22fr);
+      gap: clamp(24px, 5vw, 64px);
+      align-items: center;
+    }
+
+    .mood-frame {
+      margin: 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .mood-frame img { display: block; width: 100%; height: auto; }
+    .mood-frame figcaption { padding: 16px 18px 18px; color: var(--muted); font-size: 0.82rem; }
+
+    .principles { display: grid; gap: 14px; }
+
+    .principle {
+      display: grid;
+      grid-template-columns: 42px minmax(0, 1fr);
+      gap: 16px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.48);
+    }
+
+    .principle b {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      color: #fff;
+      background: var(--navy);
+    }
+
+    .principle h3 { margin: 1px 0 4px; font-size: 1rem; }
+    .principle p { margin: 0; color: var(--muted); font-size: 0.9rem; }
+
+    .blueprint-panel {
+      padding: clamp(22px, 5vw, 52px);
+      border: 1px solid var(--line);
+      border-radius: 34px;
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.7), rgba(239, 226, 199, 0.72)),
+        var(--paper);
+      box-shadow: var(--shadow);
+    }
+
+    .blueprint-grid {
+      display: grid;
+      grid-template-columns: minmax(300px, 430px) minmax(0, 1fr);
+      gap: clamp(30px, 6vw, 72px);
+      align-items: center;
+    }
+
+    .phone {
+      position: relative;
+      width: min(100%, 390px);
+      aspect-ratio: 390 / 844;
+      margin: 0 auto;
+      overflow: hidden;
+      border: 9px solid #092039;
+      border-radius: 48px;
+      background: #e3c486;
+      box-shadow: 0 32px 55px rgba(11, 30, 46, 0.25), inset 0 0 0 2px rgba(255,255,255,0.16);
+      isolation: isolate;
+    }
+
+    .phone::before {
+      position: absolute;
+      z-index: 8;
+      top: 9px;
+      left: 50%;
+      width: 32%;
+      height: 24px;
+      border-radius: 999px;
+      background: #07192b;
+      transform: translateX(-50%);
+      content: "";
+    }
+
+    .scene-art {
+      position: absolute;
+      inset: 0;
+      z-index: -3;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 49% center;
+    }
+
+    .scene-wash {
+      position: absolute;
+      z-index: -2;
+      inset: 0;
+      background:
+        linear-gradient(to bottom, rgba(4, 23, 35, 0.48), transparent 18%, transparent 49%, rgba(75, 38, 21, 0.28) 54%, #5b3524 61%, #3f251b 100%);
+    }
+
+    .hud {
+      position: absolute;
+      z-index: 5;
+      top: 38px;
+      left: 18px;
+      right: 18px;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .place-chip,
+    .profile-chip {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      border: 1px solid rgba(255,255,255,0.45);
+      color: #fff;
+      background: rgba(8, 31, 49, 0.82);
+      box-shadow: 0 7px 20px rgba(7, 22, 34, 0.2);
+      backdrop-filter: blur(9px);
+    }
+
+    .place-chip {
+      padding: 0 14px;
+      border-radius: 14px;
+      font-size: 0.75rem;
+      font-weight: 780;
+      letter-spacing: 0.04em;
+    }
+
+    .profile-chip {
+      gap: 8px;
+      padding: 4px 10px 4px 5px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 760;
+    }
+
+    .profile-face {
+      display: grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      border: 2px solid #fff2d4;
+      border-radius: 50%;
+      color: var(--navy);
+      background: #f4b85a;
+      font-family: Georgia, serif;
+      font-size: 1.15rem;
+    }
+
+    .game-label {
+      position: absolute;
+      z-index: 3;
+      top: 48%;
+      left: 50%;
+      width: max-content;
+      max-width: 74%;
+      padding: 7px 12px;
+      border-radius: 999px;
+      color: #fff8e8;
+      background: rgba(12, 39, 57, 0.78);
+      font-size: 0.7rem;
+      font-weight: 850;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      transform: translateX(-50%);
+      backdrop-filter: blur(7px);
+    }
+
+    .board-wrap {
+      position: absolute;
+      z-index: 2;
+      left: 50%;
+      bottom: 102px;
+      width: 76%;
+      padding: 11px;
+      border: 3px solid #bd7b39;
+      border-radius: 18px;
+      background: #ead8b5;
+      box-shadow: 0 16px 26px rgba(28, 15, 10, 0.35), inset 0 0 0 4px #f5e8cb;
+      transform: translateX(-50%) rotate(-1deg);
+    }
+
+    .board-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      aspect-ratio: 1;
+      overflow: hidden;
+      border: 2px solid #745232;
+      background: #f4e7ce;
+    }
+
+    .cell {
+      position: relative;
+      display: grid;
+      place-items: center;
+      border-right: 1px solid rgba(77, 53, 31, 0.58);
+      border-bottom: 1px solid rgba(77, 53, 31, 0.58);
+    }
+
+    .cell:nth-child(5n) { border-right: 0; }
+    .cell:nth-child(n+21) { border-bottom: 0; }
+    .cell:nth-child(odd) { background: rgba(255,255,255,0.15); }
+
+    .cell.mark::after {
+      width: 46%;
+      height: 46%;
+      border: 2px solid rgba(23, 107, 103, 0.7);
+      border-radius: 4px;
+      transform: rotate(45deg);
+      content: "";
+    }
+
+    .cell.centre::after {
+      width: 50%;
+      height: 50%;
+      border-radius: 50%;
+      background: radial-gradient(circle, #f3c35a 0 28%, #d86d31 30% 50%, #176b67 52% 66%, transparent 68%);
+      content: "";
+    }
+
+    .pawn {
+      position: absolute;
+      z-index: 3;
+      width: 15px;
+      height: 18px;
+      border: 2px solid rgba(48,26,18,0.35);
+      border-radius: 50% 50% 36% 36%;
+      box-shadow: 0 4px 5px rgba(41, 23, 15, 0.32);
+    }
+
+    .pawn::after {
+      position: absolute;
+      left: 50%;
+      bottom: -5px;
+      width: 22px;
+      height: 7px;
+      border: inherit;
+      border-radius: 50%;
+      background: inherit;
+      transform: translateX(-50%);
+      content: "";
+    }
+
+    .pawn.blue { top: 13%; left: 13%; background: #2f6c9f; }
+    .pawn.green { top: 13%; right: 13%; background: #4f7b40; }
+    .pawn.yellow { bottom: 13%; left: 13%; background: #d89a2f; }
+    .pawn.red { right: 13%; bottom: 13%; background: #b74d3e; }
+
+    .cowries {
+      position: absolute;
+      right: -4px;
+      bottom: 30px;
+      display: flex;
+      gap: 4px;
+      transform: rotate(4deg);
+    }
+
+    .cowrie {
+      width: 16px;
+      height: 25px;
+      border: 1px solid #725333;
+      border-radius: 50% 50% 46% 46%;
+      background: #fff1cf;
+      box-shadow: inset 0 0 0 3px #e4c78b, 0 3px 5px rgba(41,23,15,0.24);
+    }
+
+    .cowrie::after {
+      display: block;
+      width: 2px;
+      height: 15px;
+      margin: 4px auto;
+      border-radius: 99px;
+      background: #7b5635;
+      content: "";
+    }
+
+    .courtyard-cue {
+      position: absolute;
+      z-index: 4;
+      top: 41%;
+      right: 10px;
+      display: grid;
+      place-items: center;
+      width: 48px;
+      height: 48px;
+      border: 1px solid rgba(255,255,255,0.6);
+      border-radius: 50%;
+      color: #fff;
+      background: rgba(10, 42, 59, 0.78);
+      box-shadow: 0 8px 18px rgba(7,22,34,0.24);
+      font-size: 1.25rem;
+      text-decoration: none;
+    }
+
+    .play-button {
+      position: absolute;
+      z-index: 4;
+      right: 18px;
+      bottom: 28px;
+      left: 18px;
+      display: grid;
+      min-height: 52px;
+      place-items: center;
+      border: 0;
+      border-radius: 16px;
+      color: #fff;
+      background: var(--orange);
+      box-shadow: 0 10px 22px rgba(77, 32, 12, 0.34);
+      font-weight: 820;
+    }
+
+    .blueprint-copy ul {
+      display: grid;
+      gap: 14px;
+      margin: 22px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .blueprint-copy li {
+      display: grid;
+      grid-template-columns: 30px minmax(0, 1fr);
+      gap: 12px;
+      color: var(--muted);
+    }
+
+    .blueprint-copy li b {
+      display: grid;
+      place-items: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 10px;
+      color: #fff;
+      background: var(--teal);
+      font-size: 0.8rem;
+    }
+
+    .blueprint-copy strong { color: var(--ink); }
+
+    .authority-note {
+      margin-top: 26px;
+      padding: 16px 18px;
+      border-left: 4px solid var(--gold);
+      border-radius: 0 12px 12px 0;
+      background: rgba(215, 168, 62, 0.1);
+      color: #645128;
+      font-size: 0.9rem;
+    }
+
+    .journey {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 10px;
+      counter-reset: step;
+    }
+
+    .journey article {
+      position: relative;
+      min-height: 180px;
+      padding: 18px 16px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255,255,255,0.52);
+      counter-increment: step;
+    }
+
+    .journey article::before {
+      display: block;
+      margin-bottom: 26px;
+      color: var(--orange-dark);
+      font-size: 0.72rem;
+      font-weight: 850;
+      letter-spacing: 0.09em;
+      content: "0" counter(step);
+    }
+
+    .journey article:not(:last-child)::after {
+      position: absolute;
+      z-index: 2;
+      top: 35px;
+      right: -8px;
+      width: 16px;
+      height: 16px;
+      border-top: 2px solid var(--orange);
+      border-right: 2px solid var(--orange);
+      background: var(--cream);
+      transform: rotate(45deg);
+      content: "";
+    }
+
+    .journey h3 { margin-bottom: 6px; font-size: 1rem; }
+    .journey p { margin: 0; color: var(--muted); font-size: 0.84rem; }
+
+    .family-grid,
+    .state-grid,
+    .decision-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .family-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+    .state-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .decision-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+    .family,
+    .character-state,
+    .decision {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: rgba(255,255,255,0.5);
+    }
+
+    .swatch {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(11,41,72,0.12);
+      border-radius: 14px;
+      background: var(--swatch);
+      box-shadow: inset 0 0 0 5px rgba(255,255,255,0.24);
+    }
+
+    .family h3, .character-state h3, .decision h3 { margin-bottom: 7px; font-size: 1rem; }
+    .family p, .character-state p, .decision p { margin: 0; color: var(--muted); font-size: 0.88rem; }
+
+    .character-state small,
+    .decision small {
+      display: block;
+      margin-bottom: 12px;
+      color: var(--orange-dark);
+      font-weight: 850;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .decision.locked { border-top: 5px solid var(--teal); }
+    .decision.selected { border-top: 5px solid var(--orange); }
+    .decision.open { border-top: 5px solid var(--gold); }
+
+    .questions {
+      padding: clamp(24px, 5vw, 48px);
+      border-radius: 30px;
+      color: #fff;
+      background: var(--navy);
+      box-shadow: var(--shadow);
+    }
+
+    .questions h2 { color: #fff; }
+    .questions > p { max-width: 680px; color: #c9d5df; }
+
+    .question-list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 28px;
+      counter-reset: question;
+    }
+
+    .question-list article {
+      min-height: 170px;
+      padding: 20px;
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 18px;
+      background: rgba(255,255,255,0.07);
+      counter-increment: question;
+    }
+
+    .question-list article::before {
+      display: block;
+      margin-bottom: 24px;
+      color: #f8b47f;
+      font-size: 0.75rem;
+      font-weight: 850;
+      letter-spacing: 0.1em;
+      content: "QUESTION 0" counter(question);
+    }
+
+    .question-list p { margin: 0; color: #edf4f8; }
+
+    footer {
+      padding: 28px 0 44px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    :focus-visible { outline: 3px solid #f5a75d; outline-offset: 3px; }
+
+    @media (max-width: 960px) {
+      header, .mood-grid, .blueprint-grid { grid-template-columns: 1fr; }
+      .header-note { max-width: 620px; }
+      .mood-frame { width: min(100%, 560px); }
+      .journey { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .family-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .state-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 680px) {
+      nav { align-items: flex-start; flex-direction: column; }
+      header { padding-top: 48px; }
+      main { gap: 64px; }
+      .journey, .family-grid, .state-grid, .decision-grid, .question-list { grid-template-columns: 1fr; }
+      .journey article { min-height: auto; }
+      .journey article:not(:last-child)::after { display: none; }
+      .blueprint-panel { border-radius: 24px; }
+      .phone { border-width: 7px; border-radius: 40px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { scroll-behavior: auto !important; animation: none !important; transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <nav aria-label="Review navigation">
+      <a href="../../">← All design checkpoints</a>
+      <span class="status">Selected · owner review needed</span>
+    </nav>
+
+    <header>
+      <div>
+        <p class="eyebrow">Block 00 · First reusable slice</p>
+        <h1>Ashta Chamma, at home on the veranda</h1>
+        <p class="lede">The app opens as a connected place, not a game grid: Grandma anchors the emotional setting, the physical game set owns the foreground, and the courtyard remains one intentional move away.</p>
+      </div>
+      <aside class="header-note">
+        <strong>What this checkpoint decides</strong>
+        <p>Portrait hierarchy, material boundaries, first-route readability, and the resting-frame handoff into Match Setup. It does not approve game rules or pawn positions.</p>
+      </aside>
+    </header>
+
+    <main>
+      <section aria-labelledby="mood-heading">
+        <div class="mood-grid">
+          <figure class="mood-frame">
+            <img src="../assets/ashta-chamma-veranda-composition.webp" width="941" height="1672" alt="Painterly South Indian veranda in colourful daylight with a stylized Grandma embroidering in a rocking chair, a physical board-game cloth in the foreground, and a connected flower-filled courtyard beyond.">
+            <figcaption>Selected material and spatial mood. The generated stitches and piece positions are illustrative; the code-owned board blueprint below governs screen hierarchy and grid count.</figcaption>
+          </figure>
+
+          <div>
+            <div class="section-intro">
+              <p class="eyebrow">Composition intent</p>
+              <h2 id="mood-heading">Place first. Game clear. Grandma present.</h2>
+              <p>This direction keeps the warmth of a lived-in family home without turning gameplay into decoration or making Grandma a dialogue gate.</p>
+            </div>
+            <div class="principles">
+              <article class="principle"><b>1</b><div><h3>Game set owns the lower-middle foreground</h3><p>It is the largest actionable object and leads directly to Match Setup.</p></div></article>
+              <article class="principle"><b>2</b><div><h3>Grandma sits in left-middle depth</h3><p>Her quiet embroidery supports the setting while leaving the game visually dominant.</p></div></article>
+              <article class="principle"><b>3</b><div><h3>Courtyard stays visibly connected</h3><p>A right-side opening and familiar 48×48 cue promise one-scene travel to Navakankari.</p></div></article>
+              <article class="principle"><b>4</b><div><h3>Colourful daylight, not golden-hour theatre</h3><p>Controlled leaf shadows and restrained ambient life keep the home active without competing motion.</p></div></article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="blueprint-panel" aria-labelledby="blueprint-heading">
+        <div class="blueprint-grid">
+          <div class="phone" role="img" aria-label="Portrait phone blueprint: veranda context and saved profile at the top, Grandma in left-middle depth, an exact five by five Ashta Chamma set in the lower-middle foreground, courtyard travel cue at right, and Play Ashta Chamma at the bottom">
+            <img class="scene-art" src="../assets/ashta-chamma-veranda-composition.webp" alt="" aria-hidden="true">
+            <div class="scene-wash" aria-hidden="true"></div>
+            <div class="hud">
+              <span class="place-chip">Veranda · 1 of 2</span>
+              <span class="profile-chip"><span class="profile-face" aria-hidden="true">A</span>Anu</span>
+            </div>
+            <span class="game-label">Ashta Chamma</span>
+            <span class="courtyard-cue" aria-hidden="true">→</span>
+            <div class="board-wrap">
+              <div class="board-grid" role="img" aria-label="An exact five by five board grid used for layout; route markings and pawn positions are illustrative at this checkpoint">
+                <span class="cell"></span><span class="cell"></span><span class="cell"></span><span class="cell"></span><span class="cell"></span>
+                <span class="cell"></span><span class="cell mark"></span><span class="cell"></span><span class="cell mark"></span><span class="cell"></span>
+                <span class="cell"></span><span class="cell"></span><span class="cell centre"></span><span class="cell"></span><span class="cell"></span>
+                <span class="cell"></span><span class="cell mark"></span><span class="cell"></span><span class="cell mark"></span><span class="cell"></span>
+                <span class="cell"></span><span class="cell"></span><span class="cell"></span><span class="cell"></span><span class="cell"></span>
+              </div>
+              <span class="pawn blue" aria-hidden="true"></span>
+              <span class="pawn green" aria-hidden="true"></span>
+              <span class="pawn yellow" aria-hidden="true"></span>
+              <span class="pawn red" aria-hidden="true"></span>
+              <span class="cowries" aria-hidden="true"><i class="cowrie"></i><i class="cowrie"></i><i class="cowrie"></i><i class="cowrie"></i></span>
+            </div>
+            <span class="play-button" aria-hidden="true">Play Ashta Chamma</span>
+          </div>
+
+          <div class="blueprint-copy">
+            <p class="eyebrow">Code-owned portrait blueprint</p>
+            <h2 id="blueprint-heading">The exact hierarchy to implement</h2>
+            <p class="lede">The environment may extend on wider devices; these relationships do not drift.</p>
+            <ul>
+              <li><b>1</b><span><strong>Top safe edge:</strong> place context at left and the saved player’s identity control at right—never a score or turn counter.</span></li>
+              <li><b>2</b><span><strong>Left-middle depth:</strong> Grandma remains environmental Clothfolk and does not narrate, recommend, or block play.</span></li>
+              <li><b>3</b><span><strong>Lower-middle foreground:</strong> the 5×5 textile board is the largest actionable object and tapping it matches the primary button.</span></li>
+              <li><b>4</b><span><strong>Right-side opening:</strong> one arrow or swipe advances exactly one authored scene; it changes focus and never starts a match.</span></li>
+            </ul>
+            <p class="authority-note"><strong>Authority boundary:</strong> grid count and screen hierarchy are selected here. Board routes, pawn starts, shell outcomes, and legal moves come only from validated game data.</p>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="journey-heading">
+        <div class="section-intro">
+          <p class="eyebrow">First complete journey</p>
+          <h2 id="journey-heading">Six handoffs, no conversational gate</h2>
+          <p>The first launch teaches just enough to get a family from arrival to a real match. Every introduction is skippable and lands on the same complete state.</p>
+        </div>
+        <div class="journey">
+          <article><h3>Home arrives</h3><p>6–8 second painted reveal. Skip appears after one second.</p></article>
+          <article><h3>Create profile</h3><p>Required name plus one of eight ready-made Clothfolk.</p></article>
+          <article><h3>Discover</h3><p>Short hints teach focus, travel, and activation; then get out of the way.</p></article>
+          <article><h3>Choose game</h3><p>Ashta Chamma is playable on the veranda; Navakankari waits in the courtyard.</p></article>
+          <article><h3>Set match</h3><p>Choose local or online, fill valid seats, confirm Ready, then host starts.</p></article>
+          <article><h3>Board handoff</h3><p>Grandma’s embroidery resolves into the data-owned live board in 4–6 seconds.</p></article>
+        </div>
+      </section>
+
+      <section aria-labelledby="families-heading">
+        <div class="section-intro">
+          <p class="eyebrow">Material grammar</p>
+          <h2 id="families-heading">Five visible families, one job each</h2>
+          <p>Clear material ownership prevents the warm visual world from weakening interaction clarity.</p>
+        </div>
+        <div class="family-grid">
+          <article class="family"><div class="swatch" style="--swatch: linear-gradient(135deg,#1e7770,#efd07c)"></div><h3>Painted environment</h3><p>House, veranda, courtyard, garden, light, and atmospheric loops.</p></article>
+          <article class="family"><div class="swatch" style="--swatch: repeating-linear-gradient(45deg,#e7d2a6 0 3px,#c68e55 3px 5px)"></div><h3>Textile board</h3><p>Linen ground, stitched route, and embroidered border—never characters.</p></article>
+          <article class="family"><div class="swatch" style="--swatch: radial-gradient(circle at 35% 25%,#f8cf60,#b84c33 70%)"></div><h3>Sculptural objects</h3><p>Pawns, cowries, dice, and only the bowls genuinely owned by a game.</p></article>
+          <article class="family"><div class="swatch" style="--swatch: linear-gradient(135deg,#31577b,#dd9a52)"></div><h3>Courtyard Clothfolk</h3><p>Grandma and player roles outside active play, with soft sculpted textile detail.</p></article>
+          <article class="family"><div class="swatch" style="--swatch: linear-gradient(135deg,#0b2948 0 50%,#fffaf0 50%)"></div><h3>Clean native HUD</h3><p>Profile, settings, modes, seats, Ready, Start, and accessibility controls.</p></article>
+        </div>
+      </section>
+
+      <section aria-labelledby="states-heading">
+        <div class="section-intro">
+          <p class="eyebrow">Grandma’s semantic states</p>
+          <h2 id="states-heading">Warm presence without constant performance</h2>
+          <p>These four states cover the slice. They are semantic inputs, not separate art styles.</p>
+        </div>
+        <div class="state-grid">
+          <article class="character-state"><small>Idle</small><h3>Quiet embroidery</h3><p>Breathing, cloth settling, and occasional gaze changes stay below game-set motion.</p></article>
+          <article class="character-state"><small>Attention</small><h3>Notices focus</h3><p>Eyes and head acknowledge the selected game without speech, pointing, or recommendation.</p></article>
+          <article class="character-state"><small>Interaction</small><h3>Supports the handoff</h3><p>A restrained hand-and-cloth response begins the lobby-to-board transition after Start.</p></article>
+          <article class="character-state"><small>Reaction</small><h3>Shares the moment</h3><p>Brief delight belongs in lobby and results, never as a persistent active-board character.</p></article>
+        </div>
+      </section>
+
+      <section aria-labelledby="decisions-heading">
+        <div class="section-intro">
+          <p class="eyebrow">Fast decision ledger</p>
+          <h2 id="decisions-heading">What is locked, selected, and still open</h2>
+        </div>
+        <div class="decision-grid">
+          <article class="decision locked"><small>Locked</small><h3>Product structure</h3><p>React Native + Expo + TypeScript; one saved owner profile; local and invite-code online play; no launch timer or auto-forfeit.</p></article>
+          <article class="decision selected"><small>Selected here</small><h3>First visual slice</h3><p>Ashta Chamma veranda, portrait hierarchy, Clothfolk Grandma, exact 5×5 layout, courtyard travel cue, and clean native activation.</p></article>
+          <article class="decision open"><small>After approval</small><h3>Implementation tuning</h3><p>Fine spacing, authentic route marks, device-specific crops, ambient-loop timing, sound, haptics, and measured performance budgets.</p></article>
+        </div>
+      </section>
+
+      <section class="questions" aria-labelledby="questions-heading">
+        <h2 id="questions-heading">Three checks before implementation planning</h2>
+        <p>Approve the direction as a whole, or name the one relationship that should change.</p>
+        <div class="question-list">
+          <article><p>Does the physical game set clearly dominate while Grandma still makes the veranda feel emotionally owned?</p></article>
+          <article><p>Does the top-right profile read as identity and navigation—not as score, seat, or current turn?</p></article>
+          <article><p>Does the right-side courtyard cue read as travel to another authored scene rather than “Play”?</p></article>
+        </div>
+      </section>
+    </main>
+
+    <footer>Selected visual checkpoint · App implementation remains private · Board rules remain data-owned.</footer>
+  </div>
+</body>
+</html>

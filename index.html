@@ -11,7 +11,6 @@
       --navy: #0a2342;
       --navy-soft: #173b63;
       --cream: #f7f1e3;
-      --cream-deep: #eee2ca;
       --orange: #e96822;
       --ink: #172235;
       --muted: #667080;
@@ -79,12 +78,25 @@
       box-shadow: var(--shadow);
     }
 
+    .latest-visual {
+      display: grid;
+      place-items: center;
+      min-height: min(68vw, 700px);
+      padding: clamp(22px, 5vw, 58px);
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+      background:
+        radial-gradient(circle at 72% 26%, rgba(255, 211, 98, 0.26), transparent 30%),
+        linear-gradient(145deg, #174f58, #0a2f45 56%, #512f22);
+    }
+
     .latest img {
       display: block;
-      width: 100%;
+      width: min(420px, 84%);
       height: auto;
-      border-bottom: 1px solid var(--line);
-      background: white;
+      border: 8px solid rgba(255, 250, 232, 0.82);
+      border-radius: 28px;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.28);
     }
 
     .latest-copy {
@@ -148,7 +160,7 @@
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
       gap: 16px;
     }
 
@@ -187,9 +199,12 @@
       header { display: block; padding-top: 32px; }
       .latest-copy { grid-template-columns: 1fr; }
       .button { width: 100%; }
-      .grid { grid-template-columns: 1fr; }
       .section-heading { display: block; }
       .section-heading p { margin-top: 4px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition: none !important; }
     }
   </style>
 </head>
@@ -205,23 +220,30 @@
 
     <main>
       <article class="latest">
-        <img src="reviews/assets/online-turn-open-edge-landing-storyboard.png" alt="Six-panel online-turn storyboard showing waiting, an open-edge cowrie landing with a remote touch echo, a light-stamped result, legal-pawn glow, reconnect, and reduced-motion states.">
+        <div class="latest-visual">
+          <img src="reviews/assets/ashta-chamma-veranda-composition.webp" width="941" height="1672" alt="Painterly South Indian veranda with a stylized Grandma embroidering beside an Ashta Chamma game set and connected courtyard.">
+        </div>
         <div class="latest-copy">
           <div>
-            <span class="badge">Approved</span>
-            <h2>Online turn · Open Edge Landing + Remote Touch Echo</h2>
-            <p>On the rolling phone, cowries land in open space beyond the active board edge; remote viewers see a brief edge-origin touch echo, followed by the approved light-stamped result without another player's hand or a dedicated mat.</p>
+            <span class="badge">Selected · review needed</span>
+            <h2>Ashta Chamma · Veranda-first vertical slice</h2>
+            <p>The proposed first complete journey pairs a warm, connected Memory Home with a code-precise 5×5 game-set blueprint, explicit material families, and a direct handoff into Match Setup.</p>
           </div>
-          <a class="button" href="reviews/online-turn-open-edge-landing/">Review the six states</a>
+          <a class="button" href="reviews/ashta-chamma-veranda/">Review the direction</a>
         </div>
       </article>
 
       <section class="archive" aria-labelledby="archive-heading">
         <div class="section-heading">
           <h2 id="archive-heading">Earlier checkpoints</h2>
-          <p>Useful context, including superseded explorations.</p>
+          <p>Approved decisions and useful superseded context.</p>
         </div>
         <div class="grid">
+          <a class="card" href="reviews/online-turn-open-edge-landing/">
+            <small>Approved</small>
+            <h3>Online turn · Open Edge Landing</h3>
+            <p>The locked remote-touch echo and light-stamped result across six online-turn states.</p>
+          </a>
           <a class="card" href="reviews/landing-page-game-selection.html">
             <small>Exploratory</small>
             <h3>Landing page and game selection</h3>
