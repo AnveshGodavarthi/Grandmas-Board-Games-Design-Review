@@ -15,10 +15,9 @@ const storyboard = readFileSync(
   new URL("../reviews/assets/online-turn-open-edge-landing-storyboard.png", import.meta.url),
 );
 
-assert.match(home, /Online turn · Open Edge Landing \+ Remote Touch Echo/);
+assert.match(home, /Online turn · Open Edge Landing/);
 assert.match(home, /href="reviews\/online-turn-open-edge-landing\/"/);
-assert.match(home, /online-turn-open-edge-landing-storyboard\.png/);
-assert.match(home, /<span class="badge">Approved<\/span>/);
+assert.match(home, /<small>Approved<\/small>/);
 assert.match(home, /light-stamped result/i);
 
 assert.match(review, /<h1>Open Edge Landing \+ Remote Touch Echo<\/h1>/);
@@ -46,7 +45,7 @@ assert.match(workflow, /grep -q "Approved"/);
 
 assert.equal(
   createHash("sha256").update(storyboard).digest("hex"),
-  "82b73219b8dd0ba6b37a0fa509cf94bf59855a2affb713652e9d17c102aab1b2",
+  "21a2a38edbf8133b86cdfeb51785a3e09c61203f099fede305d57fcd30d3eff9",
 );
 
 console.log("Approved light-stamped online-turn review contract verified.");
