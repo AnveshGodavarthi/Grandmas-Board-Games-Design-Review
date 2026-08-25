@@ -8,6 +8,7 @@ on:
       - index.html
       - reviews/**
       - assets/**
+      - tests/**
       - .github/workflows/pages.yml
   workflow_dispatch:
 
@@ -48,6 +49,7 @@ jobs:
           grep -q "Ashta Chamma, at home on the veranda" reviews/ashta-chamma-veranda/index.html
           node tests/verify-open-edge-review.mjs
           node tests/verify-ashta-chamma-veranda.mjs
+          node tests/verify-workflow-trigger.mjs
 
       - name: Upload review surface
         uses: actions/upload-pages-artifact@v4
