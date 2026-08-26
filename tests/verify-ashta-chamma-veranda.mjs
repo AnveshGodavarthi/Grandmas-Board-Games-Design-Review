@@ -9,7 +9,7 @@ const reviewPath = new URL("reviews/ashta-chamma-veranda/index.html", root);
 const imagePath = new URL("reviews/assets/ashta-chamma-veranda-composition.webp", root);
 
 assert.ok(existsSync(reviewPath), "the veranda review page must exist");
-assert.ok(existsSync(imagePath), "the selected composition asset must exist");
+assert.ok(existsSync(imagePath), "the approved composition asset must exist");
 
 const home = read("index.html");
 const review = read("reviews/ashta-chamma-veranda/index.html");
@@ -20,15 +20,15 @@ const image = readFileSync(imagePath);
 assert.match(home, /Ashta Chamma · Veranda-first vertical slice/);
 assert.match(home, /href="reviews\/ashta-chamma-veranda\/"/);
 assert.match(home, /ashta-chamma-veranda-composition\.webp/);
-assert.match(home, /Selected · review needed/);
+assert.match(home, /Approved · implementation reference/);
 assert.match(home, /href="reviews\/online-turn-open-edge-landing\/"/);
 assert.match(home, /<small>Approved<\/small>/);
 
 assert.match(review, /<h1>Ashta Chamma, at home on the veranda<\/h1>/);
-assert.match(review, /Selected · owner review needed/);
+assert.match(review, /Approved · implementation reference/);
 assert.match(review, /It does not approve game rules or pawn positions/i);
 assert.match(review, /exact five by five board grid/i);
-assert.match(review, /grid count and screen hierarchy are selected here/i);
+assert.match(review, /grid count and screen hierarchy are approved here/i);
 assert.match(review, /one arrow or swipe advances exactly one authored scene/i);
 assert.match(review, /Grandma remains environmental Clothfolk/i);
 assert.match(review, /Painted environment/);
@@ -47,7 +47,7 @@ assert.equal((review.match(/<i class="cowrie"><\/i>/g) ?? []).length, 4);
 assert.doesNotMatch(review, /\b(?:TODO|TBD|Pachisi|Chowka)\b/i);
 
 assert.match(readme, /ashta-chamma-veranda\//);
-assert.match(readme, /Selected, owner review needed/);
+assert.match(readme, /Approved/);
 assert.match(workflow, /reviews\/ashta-chamma-veranda\/index\.html/);
 assert.match(workflow, /reviews\/assets\/ashta-chamma-veranda-composition\.webp/);
 assert.match(workflow, /node tests\/verify-ashta-chamma-veranda\.mjs/);
