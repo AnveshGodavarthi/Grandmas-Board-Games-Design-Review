@@ -17,5 +17,6 @@ const watches = (path) => watchedPaths.some((pattern) => {
 
 assert.ok(watches("tests/example.mjs"), "a tests-only commit must trigger the review workflow");
 assert.ok(watches("reviews/example/index.html"), "a review-page commit must trigger the review workflow");
+assert.ok(watches("progress/index.html"), "a progress-only commit must trigger the review workflow");
 
 console.log("Design-review workflow trigger contract verified.");

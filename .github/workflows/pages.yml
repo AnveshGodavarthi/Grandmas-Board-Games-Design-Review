@@ -7,6 +7,7 @@ on:
     paths:
       - index.html
       - reviews/**
+      - progress/**
       - assets/**
       - tests/**
       - .github/workflows/pages.yml
@@ -41,14 +42,17 @@ jobs:
           test -f reviews/assets/online-turn-open-edge-landing-storyboard.png
           test -f reviews/ashta-chamma-veranda/index.html
           test -f reviews/assets/ashta-chamma-veranda-composition.webp
+          test -f progress/index.html
           grep -q "Design review" index.html
           grep -q 'href="reviews/online-turn-open-edge-landing/"' index.html
           grep -q 'href="reviews/ashta-chamma-veranda/"' index.html
+          grep -q 'href="progress/"' index.html
           grep -q "Open Edge Landing + Remote Touch Echo" reviews/online-turn-open-edge-landing/index.html
           grep -q "Approved" reviews/online-turn-open-edge-landing/index.html
           grep -q "Ashta Chamma, at home on the veranda" reviews/ashta-chamma-veranda/index.html
           node tests/verify-open-edge-review.mjs
           node tests/verify-ashta-chamma-veranda.mjs
+          node tests/verify-build-progress.mjs
           node tests/verify-workflow-trigger.mjs
 
       - name: Upload review surface

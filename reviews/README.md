@@ -2,6 +2,7 @@
 
 This directory holds topic-specific UI/UX explorations linked from the stable public review surface.
 
+- [Build progress dashboard](../progress/) — Current verified implementation status and roadmap
 - [Ashta Chamma: veranda-first vertical slice](ashta-chamma-veranda/) — Approved
 - [Online turn: Open Edge Landing + Remote Touch Echo](online-turn-open-edge-landing/) — Approved
 - [Landing-page and game-selection review](landing-page-game-selection.html) — Exploratory
