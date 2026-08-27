@@ -3,50 +3,43 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Current Grandma's Board Games progress, including verified capabilities, work in flight, build health, and next milestones.">
-  <title>Grandma's Board Games · Build Progress</title>
+  <meta name="description" content="The active build roadmap for Grandma's Board Games.">
+  <title>Grandma's Board Games · Build Roadmap</title>
   <style>
     :root {
       color-scheme: light;
       --navy: #0a2342;
-      --navy-soft: #173b63;
       --cream: #f7f1e3;
-      --paper: rgba(255, 255, 255, 0.76);
-      --paper-solid: #fffdf7;
+      --paper: rgba(255, 255, 255, 0.78);
       --orange: #e96822;
       --orange-soft: #fff0e6;
       --green: #1f6b54;
-      --green-soft: #e6f3ed;
       --ink: #172235;
       --muted: #667080;
       --line: rgba(10, 35, 66, 0.14);
-      --shadow: 0 22px 64px rgba(42, 28, 12, 0.1);
     }
 
     * { box-sizing: border-box; }
-
-    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
       color: var(--ink);
       background:
-        radial-gradient(circle at 12% 0%, rgba(233, 104, 34, 0.14), transparent 30rem),
-        radial-gradient(circle at 92% 20%, rgba(31, 107, 84, 0.09), transparent 28rem),
+        radial-gradient(circle at 8% 0%, rgba(233, 104, 34, 0.12), transparent 26rem),
         var(--cream);
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.55;
+      line-height: 1.45;
     }
 
     a { color: inherit; }
 
     .skip-link {
       position: fixed;
-      z-index: 20;
-      top: 10px;
-      left: 10px;
-      padding: 10px 14px;
-      border-radius: 10px;
+      z-index: 10;
+      top: 8px;
+      left: 8px;
+      padding: 9px 13px;
+      border-radius: 9px;
       color: #fff;
       background: var(--navy);
       transform: translateY(-160%);
@@ -55,16 +48,16 @@
     .skip-link:focus { transform: translateY(0); }
 
     .shell {
-      width: min(1160px, calc(100% - 32px));
+      width: min(1120px, calc(100% - 32px));
       margin: 0 auto;
     }
 
-    header {
+    .site-header {
       display: flex;
       justify-content: space-between;
-      gap: 24px;
+      gap: 20px;
       align-items: center;
-      padding: 30px 0 22px;
+      min-height: 72px;
       border-bottom: 1px solid var(--line);
     }
 
@@ -79,8 +72,8 @@
 
     .brand-mark {
       display: grid;
-      width: 34px;
-      height: 34px;
+      width: 32px;
+      height: 32px;
       place-items: center;
       border-radius: 50%;
       color: #fff;
@@ -88,251 +81,92 @@
       font-family: Georgia, "Times New Roman", serif;
     }
 
-    nav { display: flex; gap: 10px; align-items: center; }
-
-    .nav-link {
+    .review-link {
       display: inline-flex;
       min-height: 44px;
       align-items: center;
-      padding: 0 14px;
+      padding: 0 13px;
       border: 1px solid var(--line);
-      border-radius: 12px;
-      background: rgba(255, 255, 255, 0.46);
+      border-radius: 11px;
+      background: rgba(255, 255, 255, 0.5);
       font-weight: 720;
       text-decoration: none;
     }
 
-    .nav-link:hover, .nav-link:focus-visible { border-color: var(--orange); }
+    main { padding: 26px 0 40px; }
 
-    main { padding: 52px 0 72px; }
+    .roadmap-hero {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: end;
+      margin-bottom: 18px;
+    }
 
     .eyebrow {
-      margin: 0 0 10px;
+      margin: 0 0 5px;
       color: var(--orange);
-      font-size: 0.78rem;
+      font-size: 0.73rem;
       font-weight: 850;
-      letter-spacing: 0.13em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
     }
 
-    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, p { margin-top: 0; }
 
-    h1, h2 {
+    h1 {
+      margin-bottom: 0;
       color: var(--navy);
       font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.2rem, 6vw, 4.2rem);
+      line-height: 0.95;
       letter-spacing: -0.025em;
     }
 
-    h1 {
-      max-width: 800px;
-      margin-bottom: 16px;
-      font-size: clamp(2.55rem, 7vw, 5.7rem);
-      line-height: 0.96;
-    }
-
-    h2 { font-size: clamp(1.75rem, 4vw, 2.8rem); line-height: 1.05; }
-
-    .hero-copy {
-      max-width: 780px;
-      margin-bottom: 0;
-      color: var(--muted);
-      font-size: clamp(1rem, 2vw, 1.18rem);
-    }
-
     .updated {
-      display: inline-flex;
-      gap: 7px;
-      align-items: center;
-      margin-top: 20px;
+      margin: 0;
       color: var(--muted);
-      font-size: 0.9rem;
+      font-size: 0.86rem;
+      white-space: nowrap;
     }
 
-    .updated::before {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--green);
-      content: "";
-    }
-
-    .current-grid {
+    .active-work {
       display: grid;
-      grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.8fr);
-      gap: 18px;
-      margin: 40px 0 64px;
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      gap: 14px;
+      align-items: center;
+      margin-bottom: 14px;
+      padding: 14px 16px;
+      border: 1px solid rgba(233, 104, 34, 0.35);
+      border-radius: 15px;
+      background: linear-gradient(120deg, var(--orange-soft), rgba(255, 255, 255, 0.7));
     }
 
-    .panel {
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      background: var(--paper);
-      box-shadow: var(--shadow);
-    }
-
-    .active-panel {
-      position: relative;
-      overflow: hidden;
-      padding: clamp(24px, 5vw, 44px);
-    }
-
-    .active-panel::after {
-      position: absolute;
-      width: 220px;
-      height: 220px;
-      right: -90px;
-      bottom: -120px;
+    .live-dot {
+      width: 11px;
+      height: 11px;
       border-radius: 50%;
-      background: rgba(233, 104, 34, 0.1);
-      content: "";
+      background: var(--orange);
+      box-shadow: 0 0 0 5px rgba(233, 104, 34, 0.13);
     }
 
-    .status-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      align-items: center;
-      margin-bottom: 20px;
-    }
+    .active-copy { min-width: 0; }
+    .active-copy strong { display: block; color: var(--navy); }
+    .active-copy p { margin: 2px 0 0; color: var(--muted); font-size: 0.87rem; }
 
-    .pill {
-      display: inline-flex;
-      min-height: 30px;
-      align-items: center;
-      padding: 0 11px;
-      border-radius: 999px;
-      font-size: 0.76rem;
+    .active-label {
+      color: var(--orange);
+      font-size: 0.73rem;
       font-weight: 850;
       letter-spacing: 0.08em;
       text-transform: uppercase;
+      white-space: nowrap;
     }
-
-    .pill.active { color: #fff; background: var(--orange); }
-    .pill.verified { color: var(--green); background: var(--green-soft); }
-    .pill.pending { color: var(--orange); background: var(--orange-soft); }
-
-    .active-panel h2 { max-width: 620px; margin-bottom: 12px; }
-    .active-panel > p { max-width: 720px; color: var(--muted); }
-
-    .truth-boundary {
-      position: relative;
-      z-index: 1;
-      margin: 28px 0 0;
-      padding: 18px;
-      border-left: 4px solid var(--orange);
-      border-radius: 0 14px 14px 0;
-      background: var(--orange-soft);
-    }
-
-    .truth-boundary strong { display: block; color: var(--navy); }
-    .truth-boundary p { margin: 4px 0 0; color: var(--muted); }
-
-    .health-panel { display: grid; align-content: start; padding: 28px; }
-    .health-panel h2 { margin-bottom: 8px; font-size: 1.65rem; }
-    .health-panel > p { margin-bottom: 20px; color: var(--muted); }
-
-    .health-list {
-      display: grid;
-      gap: 12px;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .health-list li {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      min-height: 42px;
-      padding: 9px 11px;
-      border-radius: 12px;
-      background: var(--green-soft);
-      color: var(--green);
-      font-weight: 730;
-    }
-
-    .health-list li::before {
-      display: grid;
-      width: 22px;
-      height: 22px;
-      flex: 0 0 22px;
-      place-items: center;
-      border-radius: 50%;
-      color: #fff;
-      background: var(--green);
-      content: "✓";
-      font-size: 0.76rem;
-    }
-
-    .section { margin-top: 64px; }
-
-    .section-heading {
-      display: flex;
-      justify-content: space-between;
-      gap: 24px;
-      align-items: end;
-      margin-bottom: 20px;
-    }
-
-    .section-heading h2 { margin-bottom: 0; }
-    .section-heading p { max-width: 560px; margin-bottom: 0; color: var(--muted); }
-
-    .capability-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
-    }
-
-    .capability {
-      min-height: 185px;
-      padding: 22px;
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      background: var(--paper);
-    }
-
-    .capability .number {
-      display: inline-grid;
-      width: 34px;
-      height: 34px;
-      place-items: center;
-      border-radius: 10px;
-      color: var(--orange);
-      background: var(--orange-soft);
-      font-weight: 850;
-    }
-
-    .capability h3 { margin: 18px 0 7px; color: var(--navy); }
-    .capability p { margin: 0; color: var(--muted); font-size: 0.92rem; }
-
-    .next-panel {
-      display: grid;
-      grid-template-columns: auto minmax(0, 1fr);
-      gap: 20px;
-      align-items: start;
-      padding: 26px;
-      border: 1px solid rgba(233, 104, 34, 0.32);
-      border-radius: 22px;
-      background: linear-gradient(135deg, var(--orange-soft), rgba(255,255,255,0.65));
-    }
-
-    .next-arrow {
-      display: grid;
-      width: 48px;
-      height: 48px;
-      place-items: center;
-      border-radius: 50%;
-      color: #fff;
-      background: var(--orange);
-      font-size: 1.35rem;
-    }
-
-    .next-panel h3 { margin: 0 0 7px; color: var(--navy); font-size: 1.25rem; }
-    .next-panel p { margin: 0; color: var(--muted); }
 
     .roadmap {
       display: grid;
-      gap: 10px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 9px;
       margin: 0;
       padding: 0;
       list-style: none;
@@ -340,273 +174,194 @@
 
     .roadmap li {
       display: grid;
-      grid-template-columns: 54px 14px minmax(0, 1fr) auto;
-      gap: 14px;
+      grid-template-columns: 38px 11px minmax(0, 1fr) auto;
+      gap: 10px;
       align-items: center;
-      min-height: 76px;
-      padding: 14px 18px;
+      min-height: 65px;
+      padding: 10px 13px;
       border: 1px solid var(--line);
-      border-radius: 16px;
+      border-radius: 13px;
       background: var(--paper);
+    }
+
+    .roadmap li[data-status="active"] {
+      border-color: rgba(233, 104, 34, 0.5);
+      background: var(--orange-soft);
     }
 
     .block-number {
       color: var(--navy);
       font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-weight: 820;
+      font-size: 0.86rem;
+      font-weight: 850;
     }
 
     .roadmap-dot {
-      width: 12px;
-      height: 12px;
+      width: 10px;
+      height: 10px;
       border: 2px solid var(--muted);
       border-radius: 50%;
     }
 
     [data-status="complete"] .roadmap-dot { border-color: var(--green); background: var(--green); }
-    [data-status="active"] .roadmap-dot { border-color: var(--orange); background: var(--orange); box-shadow: 0 0 0 5px rgba(233, 104, 34, 0.13); }
+    [data-status="active"] .roadmap-dot { border-color: var(--orange); background: var(--orange); }
 
-    .roadmap-copy h3 { margin: 0 0 3px; color: var(--navy); font-size: 1rem; }
-    .roadmap-copy p { margin: 0; color: var(--muted); font-size: 0.88rem; }
+    .roadmap-copy h2 {
+      margin: 0 0 1px;
+      color: var(--navy);
+      font-size: 0.93rem;
+      line-height: 1.2;
+    }
+
+    .roadmap-copy p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.76rem;
+      line-height: 1.25;
+    }
 
     .roadmap-status {
       color: var(--muted);
-      font-size: 0.76rem;
-      font-weight: 820;
-      letter-spacing: 0.07em;
+      font-size: 0.67rem;
+      font-weight: 850;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
     }
 
     [data-status="complete"] .roadmap-status { color: var(--green); }
     [data-status="active"] .roadmap-status { color: var(--orange); }
 
-    .review-link {
-      display: inline-flex;
-      min-height: 48px;
-      align-items: center;
-      justify-content: center;
-      margin-top: 22px;
-      padding: 0 18px;
-      border-radius: 14px;
-      color: #fff;
-      background: var(--navy);
-      font-weight: 760;
-      text-decoration: none;
+    .verification-note {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: 0.78rem;
     }
 
-    .review-link:hover, .review-link:focus-visible { background: var(--navy-soft); }
+    .verification-note strong { color: var(--green); }
 
     footer {
-      padding: 24px 0 42px;
+      padding: 18px 0 30px;
       border-top: 1px solid var(--line);
       color: var(--muted);
-      font-size: 0.88rem;
+      font-size: 0.78rem;
     }
 
-    @media (max-width: 850px) {
-      .current-grid, .capability-grid { grid-template-columns: 1fr; }
-      .section-heading { display: block; }
-      .section-heading p { margin-top: 8px; }
+    @media (max-width: 720px) {
+      .roadmap-hero { display: block; }
+      .updated { margin-top: 8px; }
+      .roadmap { grid-template-columns: 1fr; }
+      .active-work { grid-template-columns: auto minmax(0, 1fr); }
+      .active-label { grid-column: 2; }
     }
 
-    @media (max-width: 600px) {
-      header { align-items: flex-start; }
-      .brand span:last-child { max-width: 170px; }
-      .nav-link { padding: 0 11px; font-size: 0.88rem; }
-      main { padding-top: 38px; }
-      .next-panel { grid-template-columns: 1fr; }
-      .roadmap li { grid-template-columns: 42px 12px minmax(0, 1fr); }
+    @media (max-width: 460px) {
+      .site-header { align-items: flex-start; padding: 14px 0; }
+      .brand span:last-child { max-width: 160px; }
+      .review-link { padding: 0 10px; font-size: 0.82rem; }
+      .roadmap li { grid-template-columns: 34px 10px minmax(0, 1fr); }
       .roadmap-status { grid-column: 3; }
+      .verification-note { display: block; }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
       *, *::before, *::after { transition: none !important; }
     }
   </style>
 </head>
 <body>
-  <a class="skip-link" href="#main-content">Skip to build progress</a>
+  <a class="skip-link" href="#main-content">Skip to build roadmap</a>
   <div class="shell">
-    <header>
+    <header class="site-header">
       <a class="brand" href="../">
         <span class="brand-mark" aria-hidden="true">G</span>
         <span>Grandma's Board Games</span>
       </a>
-      <nav aria-label="Progress navigation">
-        <a class="nav-link" href="../">Design review</a>
-      </nav>
+      <a class="review-link" href="../">Design review</a>
     </header>
 
     <main id="main-content">
-      <section aria-labelledby="page-title">
-        <p class="eyebrow">Build progress</p>
-        <h1 id="page-title">Where the app is today</h1>
-        <p class="hero-copy">A concise view of the last verified build, work currently in flight, and what comes next. Verified and pending work stay visibly separate.</p>
+      <header class="roadmap-hero">
+        <div>
+          <p class="eyebrow">Build status</p>
+          <h1>Roadmap</h1>
+        </div>
         <p class="updated">Updated <time datetime="2026-08-27">27 August 2026</time></p>
-      </section>
+      </header>
 
-      <section class="current-grid" aria-label="Current build status">
-        <article class="panel active-panel" data-latest-milestone>
-          <div class="status-row">
-            <span class="pill active">Block 01 · In progress</span>
-            <span class="pill verified">Latest milestone verified</span>
+      <section data-build-roadmap aria-label="Grandma's Board Games build roadmap">
+        <div class="active-work" data-active-work>
+          <span class="live-dot" aria-hidden="true"></span>
+          <div class="active-copy">
+            <strong>Actively building: Block 01 foundation + local game journey</strong>
+            <p>Local Match Setup and ready lobby are implemented; lobby Start and board formation are next.</p>
           </div>
-          <p class="eyebrow">Expo foundation</p>
-          <h2>Cinematic Memory Home travel is working</h2>
-          <p>A saved player can enter the painted veranda or courtyard, switch rooms by button or swipe, see Grandma's state change, and view the correct game-specific board preview. Standard motion uses a layered 800&nbsp;ms cinematic snap; reduced motion changes rooms immediately.</p>
-          <div class="truth-boundary">
-            <strong>Honest product boundary</strong>
-            <p>This is a functioning application foundation, but it is not a playable match yet. Match Setup, lobby, intro formation, turns, results, and multiplayer remain ahead.</p>
-          </div>
-        </article>
-
-        <aside class="panel health-panel" data-build-health data-status="verified" aria-labelledby="health-heading">
-          <p class="eyebrow">Last verified build</p>
-          <h2 id="health-heading">Healthy</h2>
-          <p>The exact current milestone passed every automated gate.</p>
-          <ul class="health-list">
-            <li>123 automated tests</li>
-            <li>Strict TypeScript checks</li>
-            <li>Expo Doctor checks</li>
-            <li>Production web export</li>
-          </ul>
-        </aside>
-      </section>
-
-      <section class="section" data-work-in-flight data-status="pending-ci" aria-labelledby="flight-heading">
-        <div class="section-heading">
-          <h2 id="flight-heading">Work in flight</h2>
-          <p>Implemented on the private feature branch; full Expo CI verification is still pending.</p>
+          <span class="active-label">In progress</span>
         </div>
-        <article class="next-panel">
-          <span class="next-arrow" aria-hidden="true">→</span>
-          <div>
-            <div class="status-row">
-              <span class="pill active">Implemented locally</span>
-              <span class="pill pending">Awaiting full CI</span>
-            </div>
-            <h3>Local Match Setup and ready lobby</h3>
-            <p>Home now has a primary Play action. Ashta Chamma accepts two to four local seats, keeps the saved owner in seat one, requires names and Clothfolk choices for temporary players, and opens the ready lobby only after every seat is complete. Editing preserves the draft; returning Home clears temporary players.</p>
-          </div>
-        </article>
-      </section>
 
-      <section class="section" aria-labelledby="works-heading">
-        <div class="section-heading">
-          <h2 id="works-heading">What works now</h2>
-          <p>These are implemented capabilities in the private application branch, not only design concepts.</p>
-        </div>
-        <div class="capability-grid">
-          <article class="capability">
-            <span class="number">1</span>
-            <h3>Saved player profile</h3>
-            <p>Required name, one of eight ready-made characters, local persistence, profile editing, and returning-player restoration.</p>
-          </article>
-          <article class="capability">
-            <span class="number">2</span>
-            <h3>Authored Memory Home</h3>
-            <p>Original painted veranda and courtyard plates, separate foreground depth, swipe navigation, and accessible scene descriptions.</p>
-          </article>
-          <article class="capability">
-            <span class="number">3</span>
-            <h3>Shared game geometry</h3>
-            <p>The 5×5 Ashta Chamma preview and semantic targets use the same tested geometry as the platform-free rules data.</p>
-          </article>
-          <article class="capability">
-            <span class="number">4</span>
-            <h3>Grandma state system</h3>
-            <p>Idle, attention, interaction, and reaction states are available through a typed atlas renderer and development probe.</p>
-          </article>
-          <article class="capability">
-            <span class="number">5</span>
-            <h3>Motion preferences</h3>
-            <p>Cinematic travel is interruptible and has a complete immediate alternative when system reduced motion is enabled.</p>
-          </article>
-          <article class="capability">
-            <span class="number">6</span>
-            <h3>Reusable mobile foundation</h3>
-            <p>Expo Router, native accessible controls, Skia scene layers, Reanimated motion, and a verified production export.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section" aria-labelledby="next-heading">
-        <div class="section-heading">
-          <h2 id="next-heading">Actively building next</h2>
-          <p>The next slice carries the completed local group from the ready lobby onto the board.</p>
-        </div>
-        <article class="next-panel">
-          <span class="next-arrow" aria-hidden="true">→</span>
-          <div>
-            <h3>Lobby Start → embroidery-to-board formation</h3>
-            <p>The ready group will enter the approved craft-to-board transition and arrive at the board with deterministic seat assignment. Online room codes and networking stay in the multiplayer block.</p>
-          </div>
-        </article>
-      </section>
-
-      <section class="section" aria-labelledby="roadmap-heading">
-        <div class="section-heading">
-          <h2 id="roadmap-heading">Build roadmap</h2>
-          <p>Milestone states are shown directly; no artificial completion percentage is used because these blocks have different sizes.</p>
-        </div>
         <ol class="roadmap">
           <li data-block="00" data-status="complete">
             <span class="block-number">00</span><span class="roadmap-dot" aria-hidden="true"></span>
-            <div class="roadmap-copy"><h3>Storyboard and journey</h3><p>Approved end-to-end product contract and first visual composition.</p></div>
+            <div class="roadmap-copy"><h2>Storyboard and journey</h2><p>Approved product and visual contract.</p></div>
             <span class="roadmap-status">Complete</span>
           </li>
           <li data-block="01" data-status="active">
             <span class="block-number">01</span><span class="roadmap-dot" aria-hidden="true"></span>
-            <div class="roadmap-copy"><h3>Expo foundation</h3><p>Profiles, scenes, geometry, accessibility, motion, and character-runtime validation.</p></div>
+            <div class="roadmap-copy"><h2>Expo foundation</h2><p>Profiles, Home, motion, characters, setup and lobby.</p></div>
             <span class="roadmap-status">Active</span>
           </li>
           <li data-block="02" data-status="planned">
             <span class="block-number">02</span><span class="roadmap-dot" aria-hidden="true"></span>
-            <div class="roadmap-copy"><h3>Intro and board formation</h3><p>Skippable arrival and real-time craft-to-board transition.</p></div>
-            <span class="roadmap-status">Planned</span>
+            <div class="roadmap-copy"><h2>Intro and board formation</h2><p>Skippable craft-to-board transition.</p></div>
+            <span class="roadmap-status">Next</span>
           </li>
           <li data-block="03" data-status="planned">
             <span class="block-number">03</span><span class="roadmap-dot" aria-hidden="true"></span>
-            <div class="roadmap-copy"><h3>Ashta Chamma</h3><p>Local setup, lobby, complete turns, match result, and rematch.</p></div>
+            <div class="roadmap-copy"><h2>Ashta Chamma</h2><p>Complete local turns, result and rematch.</p></div>
             <span class="roadmap-status">Planned</span>
           </li>
           <li data-block="04" data-status="planned">
             <span class="block-number">04</span><span class="roadmap-dot" aria-hidden="true"></span>
-            <div class="roadmap-copy"><h3>Navakankari</h3><p>Second playable game using the shared product shell.</p></div>
+            <div class="roadmap-copy"><h2>Navakankari</h2><p>Second playable game.</p></div>
             <span class="roadmap-status">Planned</span>
           </li>
           <li data-block="05" data-status="planned">
             <span class="block-number">05</span><span class="roadmap-dot" aria-hidden="true"></span>
-            <div class="roadmap-copy"><h3>Character system</h3><p>Grandma and player-role production assets outside active gameplay.</p></div>
+            <div class="roadmap-copy"><h2>Character system</h2><p>Production Grandma and player roles.</p></div>
             <span class="roadmap-status">Planned</span>
           </li>
           <li data-block="06" data-status="planned">
             <span class="block-number">06</span><span class="roadmap-dot" aria-hidden="true"></span>
-            <div class="roadmap-copy"><h3>Multiplayer</h3><p>Invite link, room code, ready state, synchronization, and reconnection.</p></div>
+            <div class="roadmap-copy"><h2>Multiplayer</h2><p>Rooms, synchronization and reconnection.</p></div>
             <span class="roadmap-status">Planned</span>
           </li>
           <li data-block="07" data-status="planned">
             <span class="block-number">07</span><span class="roadmap-dot" aria-hidden="true"></span>
-            <div class="roadmap-copy"><h3>Puli Meka</h3><p>New rules engine and third game after the regional ruleset is fixed.</p></div>
+            <div class="roadmap-copy"><h2>Puli Meka</h2><p>Rules engine and third game.</p></div>
             <span class="roadmap-status">Planned</span>
           </li>
           <li data-block="08" data-status="planned">
             <span class="block-number">08</span><span class="roadmap-dot" aria-hidden="true"></span>
-            <div class="roadmap-copy"><h3>Polish and accessibility</h3><p>Sound, haptics, device profiling, reduced motion, and final QA.</p></div>
+            <div class="roadmap-copy"><h2>Polish and accessibility</h2><p>Sound, haptics, profiling and QA.</p></div>
             <span class="roadmap-status">Planned</span>
           </li>
           <li data-block="09" data-status="planned">
             <span class="block-number">09</span><span class="roadmap-dot" aria-hidden="true"></span>
-            <div class="roadmap-copy"><h3>Release</h3><p>Preview distribution, store readiness, final builds, and launch.</p></div>
+            <div class="roadmap-copy"><h2>Release</h2><p>Preview builds, stores and launch.</p></div>
             <span class="roadmap-status">Planned</span>
           </li>
         </ol>
-        <a class="review-link" href="../reviews/ashta-chamma-veranda/">View the approved visual direction</a>
+
+        <p class="verification-note">
+          <span><strong>Last full app verification:</strong> 123 tests, strict TypeScript, Expo Doctor and web export.</span>
+          <span>Private source stays private.</span>
+        </p>
       </section>
     </main>
 
-    <footer>Public owner-facing progress · Private source code and implementation details remain private.</footer>
+    <footer>Owner-facing build roadmap</footer>
   </div>
 </body>
 </html>

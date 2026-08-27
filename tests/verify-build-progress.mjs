@@ -11,19 +11,23 @@ const progress = readFileSync(progressPath, "utf8");
 
 assert.match(home, /href="progress\/"/);
 assert.match(progress, /<main[^>]+id="main-content"/);
-assert.match(progress, /data-latest-milestone/);
-assert.match(
-  progress,
-  /data-work-in-flight[^>]+data-status="pending-ci"/,
-  "the dashboard must distinguish current implementation from verified work",
-);
-assert.match(
-  progress,
-  /data-build-health[^>]+data-status="verified"/,
-  "the last verified build must retain an explicit status",
-);
+assert.match(progress, /<section[^>]+data-build-roadmap/);
+assert.match(progress, /data-active-work/);
 assert.match(progress, /<time[^>]+datetime="\d{4}-\d{2}-\d{2}"/);
 assert.match(progress, /prefers-reduced-motion: reduce/);
+
+const main = progress.slice(progress.indexOf('<main'));
+const firstSection = main.match(/<section[^>]*>/)?.[0];
+assert.match(
+  firstSection ?? '',
+  /data-build-roadmap/,
+  'the build roadmap must be the first section in the main content',
+);
+
+assert.doesNotMatch(progress, /data-latest-milestone/);
+assert.doesNotMatch(progress, /data-work-in-flight/);
+assert.doesNotMatch(progress, /data-build-health/);
+assert.doesNotMatch(progress, /capability-grid/);
 
 const roadmapItems = [
   ...progress.matchAll(
