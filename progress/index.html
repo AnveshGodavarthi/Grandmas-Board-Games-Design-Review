@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Current verified build progress for Grandma's Board Games, including completed capabilities, the active block, build health, and next milestones.">
+  <meta name="description" content="Current Grandma's Board Games progress, including verified capabilities, work in flight, build health, and next milestones.">
   <title>Grandma's Board Games · Build Progress</title>
   <style>
     :root {
@@ -209,6 +209,7 @@
 
     .pill.active { color: #fff; background: var(--orange); }
     .pill.verified { color: var(--green); background: var(--green-soft); }
+    .pill.pending { color: var(--orange); background: var(--orange-soft); }
 
     .active-panel h2 { max-width: 620px; margin-bottom: 12px; }
     .active-panel > p { max-width: 720px; color: var(--muted); }
@@ -441,7 +442,7 @@
       <section aria-labelledby="page-title">
         <p class="eyebrow">Build progress</p>
         <h1 id="page-title">Where the app is today</h1>
-        <p class="hero-copy">A concise view of verified capabilities, the block currently being built, and what comes next. This page is updated after each milestone passes its full build checks.</p>
+        <p class="hero-copy">A concise view of the last verified build, work currently in flight, and what comes next. Verified and pending work stay visibly separate.</p>
         <p class="updated">Updated <time datetime="2026-08-27">27 August 2026</time></p>
       </section>
 
@@ -460,7 +461,7 @@
           </div>
         </article>
 
-        <aside class="panel health-panel" data-build-health aria-labelledby="health-heading">
+        <aside class="panel health-panel" data-build-health data-status="verified" aria-labelledby="health-heading">
           <p class="eyebrow">Last verified build</p>
           <h2 id="health-heading">Healthy</h2>
           <p>The exact current milestone passed every automated gate.</p>
@@ -471,6 +472,24 @@
             <li>Production web export</li>
           </ul>
         </aside>
+      </section>
+
+      <section class="section" data-work-in-flight data-status="pending-ci" aria-labelledby="flight-heading">
+        <div class="section-heading">
+          <h2 id="flight-heading">Work in flight</h2>
+          <p>Implemented on the private feature branch; full Expo CI verification is still pending.</p>
+        </div>
+        <article class="next-panel">
+          <span class="next-arrow" aria-hidden="true">→</span>
+          <div>
+            <div class="status-row">
+              <span class="pill active">Implemented locally</span>
+              <span class="pill pending">Awaiting full CI</span>
+            </div>
+            <h3>Local Match Setup and ready lobby</h3>
+            <p>Home now has a primary Play action. Ashta Chamma accepts two to four local seats, keeps the saved owner in seat one, requires names and Clothfolk choices for temporary players, and opens the ready lobby only after every seat is complete. Editing preserves the draft; returning Home clears temporary players.</p>
+          </div>
+        </article>
       </section>
 
       <section class="section" aria-labelledby="works-heading">
@@ -515,13 +534,13 @@
       <section class="section" aria-labelledby="next-heading">
         <div class="section-heading">
           <h2 id="next-heading">Actively building next</h2>
-          <p>The next slice turns the current Home from a visual foundation into the start of a usable game journey.</p>
+          <p>The next slice carries the completed local group from the ready lobby onto the board.</p>
         </div>
         <article class="next-panel">
           <span class="next-arrow" aria-hidden="true">→</span>
           <div>
-            <h3>Home activation → local Match Setup → ready lobby</h3>
-            <p>Ashta Chamma will gain a primary Play action, two-to-four local seats, saved and guest player assignment, and an explicit ready state. Online room codes and networking stay in the multiplayer block.</p>
+            <h3>Lobby Start → embroidery-to-board formation</h3>
+            <p>The ready group will enter the approved craft-to-board transition and arrive at the board with deterministic seat assignment. Online room codes and networking stay in the multiplayer block.</p>
           </div>
         </article>
       </section>
