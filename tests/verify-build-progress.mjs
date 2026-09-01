@@ -85,17 +85,20 @@ assert.deepEqual(
 );
 assert.match(
   progress,
-  /<strong>Actively building: Block 01 · Expo foundation<\/strong>\s*<p>Finishing approved visual checkpoints and validation\.<\/p>/,
+  /<strong>Actively building: Block 01 · Expo foundation<\/strong>\s*<p>The first-launch Memory Home arrival and handoff to required profile setup form a completed Block 01 checkpoint; rendered and device validation continues\.<\/p>/,
 );
 assert.doesNotMatch(progress, /Block 06 integration/i);
 assert.match(
   progress,
-  /Last full verification:<\/strong> 123 tests, strict TypeScript, Expo Doctor and web export were last verified\./,
+  /Last full verification:<\/strong> 155 tests, strict TypeScript, Expo Doctor and web export were verified\./,
 );
-assert.match(progress, /Rive comparison and on-device measurements remain pending\./);
+assert.match(progress, /Rendered five-stage arrival/);
+assert.match(progress, /rendered 200% text scaling/);
+assert.match(progress, /on-device measurements/);
+assert.match(progress, /Rive comparison/);
 assert.match(
   progress,
-  /<p class="verification-note">\s*<span><strong>Last full verification:<\/strong> 123 tests, strict TypeScript, Expo Doctor and web export were last verified\. Rive comparison and on-device measurements remain pending\.<\/span>\s*<\/p>/,
+  /<p class="verification-note">\s*<span><strong>Last full verification:<\/strong> 155 tests, strict TypeScript, Expo Doctor and web export were verified\. Rendered five-stage arrival, rendered 200% text scaling, on-device measurements and Rive comparison remain pending\.<\/span>\s*<\/p>/,
 );
 
 const publicText = visibleText(progress);
