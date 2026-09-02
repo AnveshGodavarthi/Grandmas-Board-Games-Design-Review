@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="The active build roadmap for Grandma's Board Games.">
+  <meta name="description" content="The build roadmap for Grandma's Board Games.">
   <title>Grandma's Board Games · Build Roadmap</title>
   <style>
     :root {
@@ -130,7 +130,7 @@
       white-space: nowrap;
     }
 
-    .active-work {
+    .next-work {
       display: grid;
       grid-template-columns: auto minmax(0, 1fr) auto;
       gap: 14px;
@@ -142,7 +142,7 @@
       background: linear-gradient(120deg, var(--orange-soft), rgba(255, 255, 255, 0.7));
     }
 
-    .live-dot {
+    .next-dot {
       width: 11px;
       height: 11px;
       border-radius: 50%;
@@ -150,11 +150,11 @@
       box-shadow: 0 0 0 5px rgba(233, 104, 34, 0.13);
     }
 
-    .active-copy { min-width: 0; }
-    .active-copy strong { display: block; color: var(--navy); }
-    .active-copy p { margin: 2px 0 0; color: var(--muted); font-size: 0.87rem; }
+    .next-copy { min-width: 0; }
+    .next-copy strong { display: block; color: var(--navy); }
+    .next-copy p { margin: 2px 0 0; color: var(--muted); font-size: 0.87rem; }
 
-    .active-label {
+    .next-label {
       color: var(--orange);
       font-size: 0.73rem;
       font-weight: 850;
@@ -253,8 +253,8 @@
       .roadmap-hero { display: block; }
       .updated { margin-top: 8px; }
       .roadmap { grid-template-columns: 1fr; }
-      .active-work { grid-template-columns: auto minmax(0, 1fr); }
-      .active-label { grid-column: 2; }
+      .next-work { grid-template-columns: auto minmax(0, 1fr); }
+      .next-label { grid-column: 2; }
     }
 
     @media (max-width: 460px) {
@@ -288,17 +288,17 @@
           <p class="eyebrow">Build status</p>
           <h1>Roadmap</h1>
         </div>
-        <p class="updated">Updated <time datetime="2026-09-01">1 September 2026</time></p>
+        <p class="updated">Updated <time datetime="2026-09-02">2 September 2026</time></p>
       </header>
 
       <section data-build-roadmap aria-label="Grandma's Board Games build roadmap">
-        <div class="active-work" data-active-work>
-          <span class="live-dot" aria-hidden="true"></span>
-          <div class="active-copy">
-            <strong>Actively building: Block 01 · Expo foundation</strong>
-            <p>The first-launch Memory Home arrival/profile handoff and synthetic 200% text-scale accessibility contract are completed Block 01 checkpoints; rendered and device validation continues.</p>
+        <div class="next-work" data-next-work>
+          <span class="next-dot" aria-hidden="true"></span>
+          <div class="next-copy">
+            <strong>Next milestone: Block 02 · Intro and board formation</strong>
+            <p>Block 01 is complete. Block 02 has not started.</p>
           </div>
-          <span class="active-label">In progress</span>
+          <span class="next-label">Not started</span>
         </div>
 
         <ol class="roadmap">
@@ -307,10 +307,10 @@
             <div class="roadmap-copy"><h2>Storyboard and journey</h2><p>Approved product and visual contract.</p></div>
             <span class="roadmap-status">Complete</span>
           </li>
-          <li data-block="01" data-status="active">
+          <li data-block="01" data-status="complete">
             <span class="block-number">01</span><span class="roadmap-dot" aria-hidden="true"></span>
             <div class="roadmap-copy"><h2>Expo foundation</h2><p>Core experience foundation.</p></div>
-            <span class="roadmap-status">In progress</span>
+            <span class="roadmap-status">Complete</span>
           </li>
           <li data-block="02" data-status="planned">
             <span class="block-number">02</span><span class="roadmap-dot" aria-hidden="true"></span>
@@ -355,7 +355,7 @@
         </ol>
 
         <p class="verification-note">
-          <span><strong>Last full verification:</strong> 162 tests, strict TypeScript, 21/21 Expo Doctor and web export were verified. Rendered five-stage arrival, rendered 200% text scaling, VoiceOver/TalkBack checks, on-device measurements and Rive comparison remain pending.</span>
+          <span><strong>Last full verification:</strong> 248 tests, strict TypeScript, Expo Doctor 21/21, production and fresh visual web exports, rendered profiles at 320×568 synthetic 200% text, 390×844 standard motion, and 430×932 reduced motion, plus a throttled browser performance regression proxy. An authored atlas is selected. Physical-device and native screen-reader validation remain deferred before Block 05 and release.</span>
         </p>
       </section>
     </main>
