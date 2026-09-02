@@ -137,15 +137,15 @@ assert.deepEqual(
 );
 assert.equal(
   roadmapItems.filter((item) => item.status === "active").length,
-  0,
-  "no roadmap block may be active between completed and planned work",
+  1,
+  "exactly one roadmap block must be active while implementation is underway",
 );
 assert.deepEqual(
   roadmapItems,
   [
     { block: "00", status: "complete" },
     { block: "01", status: "complete" },
-    { block: "02", status: "planned" },
+    { block: "02", status: "active" },
     { block: "03", status: "planned" },
     { block: "04", status: "planned" },
     { block: "05", status: "planned" },
@@ -158,7 +158,7 @@ assert.deepEqual(
 );
 assert.match(
   progress,
-  /<strong>Next milestone: Block 02 · Intro and board formation<\/strong>\s*<p>Block 01 is complete\. Block 02 has not started\.<\/p>\s*<\/div>\s*<span class="next-label">Not started<\/span>/,
+  /<strong>Active milestone: Block 02 · Intro and board formation<\/strong>\s*<p>The approved lobby-to-board implementation is underway\.<\/p>\s*<\/div>\s*<span class="next-label">In progress<\/span>/,
 );
 assert.doesNotMatch(progress, /Block 06 integration/i);
 assert.match(
