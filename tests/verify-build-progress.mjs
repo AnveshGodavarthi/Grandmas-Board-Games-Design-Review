@@ -108,7 +108,7 @@ assert.match(progress, /<section[^>]+data-build-roadmap/);
 assert.match(progress, /data-next-work/);
 assert.doesNotMatch(progress, /data-active-work/);
 assert.match(progress, /<time[^>]+datetime="\d{4}-\d{2}-\d{2}"/);
-assert.match(progress, /<time datetime="2026-09-02">2 September 2026<\/time>/);
+assert.match(progress, /<time datetime="2026-09-03">3 September 2026<\/time>/);
 assert.match(progress, /prefers-reduced-motion: reduce/);
 
 const main = progress.slice(progress.indexOf('<main'));
@@ -158,9 +158,13 @@ assert.deepEqual(
 );
 assert.match(
   progress,
-  /<strong>Active milestone: Block 02 · Intro and board formation<\/strong>\s*<p>The approved lobby-to-board implementation is underway\.<\/p>\s*<\/div>\s*<span class="next-label">In progress<\/span>/,
+  /<strong>Active milestone: Block 02 · Intro and board formation<\/strong>\s*<p>Implementation and reusable native validation tooling are ready; physical trace capture is next\.<\/p>\s*<\/div>\s*<span class="next-label">In progress<\/span>/,
 );
 assert.doesNotMatch(progress, /Block 06 integration/i);
+assert.match(
+  progress,
+  /Current Block 02 checkpoint:<\/strong> App implementation, browser-rendered validation, and a reusable native-device validation lane are complete\. Its production-like internal Android build profile, device preflight, guided 25-trace collector, raw frame and system-trace integrity checks, and strict evidence verifier passed 320 automated tests\. Physical Snapdragon 680-class traces remain pending, so Block 02 remains active and Block 03 has not started\./,
+);
 assert.match(
   progress,
   /Last full verification:<\/strong> 248 tests, strict TypeScript, Expo Doctor 21\/21, production and fresh visual web exports, rendered profiles at 320×568 synthetic 200% text, 390×844 standard motion, and 430×932 reduced motion, plus a throttled browser performance regression proxy\. An authored atlas is selected\. Physical-device and native screen-reader validation remain deferred before Block 05 and release\./,
