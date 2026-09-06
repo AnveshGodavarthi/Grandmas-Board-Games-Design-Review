@@ -288,17 +288,17 @@
           <p class="eyebrow">Build status</p>
           <h1>Roadmap</h1>
         </div>
-        <p class="updated">Updated <time datetime="2026-09-03">3 September 2026</time></p>
+        <p class="updated">Updated <time datetime="2026-09-06">6 September 2026</time></p>
       </header>
 
       <section data-build-roadmap aria-label="Grandma's Board Games build roadmap">
         <div class="next-work" data-next-work>
           <span class="next-dot" aria-hidden="true"></span>
           <div class="next-copy">
-            <strong>Active milestone: Block 02 · Intro and board formation</strong>
-            <p>The release-APK AVD closeout is running; physical validation moves to the first playable MVP.</p>
+            <strong>Next milestone: Block 05 · Character system</strong>
+            <p>Blocks 00–04 are complete; production Grandma and player roles are planned next.</p>
           </div>
-          <span class="next-label">In progress</span>
+          <span class="next-label">Planned</span>
         </div>
 
         <ol class="roadmap">
@@ -312,20 +312,20 @@
             <div class="roadmap-copy"><h2>Expo foundation</h2><p>Core experience foundation.</p></div>
             <span class="roadmap-status">Complete</span>
           </li>
-          <li data-block="02" data-status="active">
+          <li data-block="02" data-status="complete">
             <span class="block-number">02</span><span class="roadmap-dot" aria-hidden="true"></span>
             <div class="roadmap-copy"><h2>Intro and board formation</h2><p>Authored first arrival and live board handoff.</p></div>
-            <span class="roadmap-status">In progress</span>
+            <span class="roadmap-status">Complete</span>
           </li>
-          <li data-block="03" data-status="planned">
+          <li data-block="03" data-status="complete">
             <span class="block-number">03</span><span class="roadmap-dot" aria-hidden="true"></span>
             <div class="roadmap-copy"><h2>Ashta Chamma</h2><p>2–4 player local rules loop, result and rematch.</p></div>
-            <span class="roadmap-status">Planned</span>
+            <span class="roadmap-status">Complete</span>
           </li>
-          <li data-block="04" data-status="planned">
+          <li data-block="04" data-status="complete">
             <span class="block-number">04</span><span class="roadmap-dot" aria-hidden="true"></span>
             <div class="roadmap-copy"><h2>Navakankari</h2><p>Two-player local board, mills, capture and result.</p></div>
-            <span class="roadmap-status">Planned</span>
+            <span class="roadmap-status">Complete</span>
           </li>
           <li data-block="05" data-status="planned">
             <span class="block-number">05</span><span class="roadmap-dot" aria-hidden="true"></span>
@@ -355,11 +355,11 @@
         </ol>
 
         <p class="verification-note">
-          <span><strong>Current Block 02 checkpoint:</strong> App implementation and browser-rendered validation are complete. A nondebuggable Android release build plus API 29 and API 36 AVD production journeys now gate closeout; readable Gradle diagnostics and the missing splash-resource repair are cloud-synced. Physical Snapdragon 680-class validation is intentionally deferred to the first playable MVP after Block 03, where it remains binding.</span>
+          <span><strong>Current checkpoint:</strong> Blocks 03 and 04 are merged as the local-play MVP. Ashta Chamma supports 2–4 players; Navakankari supports two-player setup, mills, captures, save and resume, results, and rematches. Target-phone performance and native accessibility remain a separate pending MVP gate.</span>
         </p>
 
         <p class="verification-note">
-          <span><strong>Last full verification:</strong> 324 tests, strict TypeScript, Expo Doctor 21/21, production and visual-test web exports, all 48 Block 01 rendered assertions, and the complete Block 02 rendered transition matrix passed. AVD timing is diagnostic only and does not claim physical-device performance.</span>
+          <span><strong>Last full verification:</strong> 431 tests, strict TypeScript, Expo Doctor 21/21, a production web export, and the unified Blocks 01–04 browser review passed. Browser evidence is a surrogate and does not claim target-phone performance or native screen-reader approval.</span>
         </p>
       </section>
     </main>
