@@ -93,9 +93,9 @@ assert.deepEqual(roadmapItems, [
 assert.equal(roadmapItems.filter(({ status }) => status === "active").length, 2);
 
 assert.match(progress, /Next milestone: verify and merge Blocks 05–06/);
-assert.match(progress, /Replacement head is critic-approved; hosted verification is blocked before runner assignment\./);
+assert.match(progress, /A stale verification contract is corrected and critic-reviewed; hosted jobs still stop before runner assignment\./);
 assert.match(progress, /Current checkpoint:<\/strong> Blocks 05 and 06 are feature-complete integration candidates; the repository verification gate remains open\./);
-assert.match(progress, /Verification boundary:<\/strong> Focused local checks and exact-head independent code critique passed\./);
+assert.match(progress, /Verification boundary:<\/strong> Focused local contracts, the Block 06 suite and independent code review passed on the replacement head\./);
 assert.match(progress, /Path to first launch:<\/strong> close the open Blocks 05–06 evidence/);
 assert.doesNotMatch(progress, /Rive/i);
 
